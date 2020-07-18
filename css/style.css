@@ -1,3 +1,56 @@
 h1 {
-  color: purple;
+  width: 500px;
+  color: orange;
+  text-align: center;
+  border: 5px dashed orange;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+body {
+  background-color: royalblue;
+}
+
+.gameBoard {
+  position: absolute;
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr ;
+  height: 450px;
+  width: 450px;
+}
+
+#leftT {
+  border-right: 5px solid orange;
+  height: 155px;
+}
+
+#leftC {
+  border-right: 5px solid orange;
+  height: 155px;
+}
+
+#leftB {
+  border-right: 5px solid orange;
+  height: 155px;
+}
+
+#rightT {
+  border-left: 5px solid orange;
+  height: 155px;
+}
+
+#rightC {
+  border-left: 5px solid orange;
+  height: 155px;
+}
+
+#rightB {
+  border-left: 5px solid orange;
+  height: 155px;
+}
+
+.midRow {
+  border-top: 5px solid orange;
+  border-bottom: 5px solid orange;
+  height: 155px;
 }
