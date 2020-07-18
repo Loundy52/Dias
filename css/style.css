@@ -11,6 +11,19 @@ body {
   background-color: royalblue;
 }
 
+h2 {
+  color: orange;
+  font-size: 75px;
+  text-align: center;
+}
+
+h3 {
+  color: orange;
+  font-size: 75px;
+  text-align: center;
+  
+}
+
 .gameBoard {
   position: absolute;
   display: grid;
@@ -49,8 +62,16 @@ body {
   height: 155px;
 }
 
+.topRow {
+  height: 145px;
+}
+
 .midRow {
   border-top: 5px solid orange;
   border-bottom: 5px solid orange;
   height: 155px;
+}
+
+.botRow {
+  height: 145px;
 }
