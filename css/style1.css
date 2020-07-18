@@ -1,20 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 body {
-  font-family: 'Permanent Marker', cursive;
-  text-align: center;
+        font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    margin: 0px 0px;
+}
+
+/* background cuts off horizontally when window < 510px - how fix? */
+header {
+    background-color: tan;
+    border-bottom: 1px solid black;
 }
 
 h1 {
-  color: darkgreen;
-  font-size: 50px;
-  margin: 0 auto;
+    color: black;
+    font-size: 50px;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
 }
 
 h2 {
-  color: black;
-  font-size: 25px;
-  margin: 0 0 50px 0;
+    font-size: 25px;
+    padding: 0 0 5px 0;
 }
 
 .game-board {
@@ -22,14 +29,14 @@ h2 {
     min-height: 100%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
+    padding: 20px;
 }
 
 .square {
-    /* border: 5px solid black; */
     width: 150px;
     height: 150px; 
     line-height: 150px;
-    font-size: 75px;
+    font-size: 100px;
 }
 
 #left-top, #center-top{
