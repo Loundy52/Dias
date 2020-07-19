@@ -7,6 +7,16 @@ let gameMessage = document.querySelector('h2');
 let squareIdArray = document.querySelectorAll('div.square');
 let gameOver = false;
 
+let oMoveTracker = 
+[{'left-top': 0, 'left-middle': 0, 'left-bottom': 0,
+'center-top': 0, 'center-middle': 0, 'center-bottom': 0,
+'right-top': 0, 'right-middle': 0, 'right-bottom': 0}]
+
+let xMoveTracker = 
+[{'left-top': 0, 'left-middle': 0, 'left-bottom': 0,
+'center-top': 0, 'center-middle': 0, 'center-bottom': 0,
+'right-top': 0, 'right-middle': 0, 'right-bottom': 0}]
+
 // main eventListener
 document.addEventListener('DOMContentLoaded', function() {
     squareIdArray.forEach(function(element) {
@@ -19,6 +29,61 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
+
+// function checkResults (oResults, xResults){
+//     let oResult = oResults.every()
+// }
+
+// most of the magic happens here 
+function whoseMoveIsIt(element) {
+    // add 1 to move counter
+    moves++;
+     // add element id to clickedSquares array
+
+    // alternate between x's and o's
+    if (moves % 2 === 0 && moves < 10) {  //  x/o logic
+
+        element.classList.add('playerO');
+        element.textContent = 'o'; 
+        currentMove = 'o';
+        gameMessage.textContent = 'It\'s X\'s Turn';
+        oClickedSquareIds.push(element.id);
+        console.log(element.id);
+
+        console.log(oMoveTracker);
+        console.log(oClickedSquareIds);
+        
+        
+    } else {
+
+        element.classList.add('playerX')
+        element.textContent = 'x';
+        currentMove = 'x';
+        gameMessage.textContent = 'It\'s O\'s Turn';
+        xClickedSquareIds.push(element.id);
+        console.log(xClickedSquareIds);
+    }
+
+    // reset move counter and gameMessage after 9 iterations
+    // playerO logic to prevent fencepost error
+    if (moves === 10) { 
+        element.classList.add('playerO');
+        element.textContent = 'o';
+        currentMove = 'o';
+        moves = 1;
+        gameMessage.textContent = 'Make a move!'; 
+        gameOver = true; 
+        // gameOver = true ties to potential play again logic. 
+        // if that logic placed in this scope, last result will not update prior to alert.
+        // as above, try coding it into the victory/catsgame logic
+    }  
+
+    
+    console.log(moves);
+    console.log(currentMove);
+    return element.textContent; // must return element.textContent for change to occur
+    
+};
 
 // DONE click alternate between X and O (logic almost coded) 
 // DONE add class to marked cells to display separate players
@@ -58,54 +123,15 @@ document.addEventListener('DOMContentLoaded', function() {
 //      console.log('victory!);
 // } AND SO ON.... maybe a bit much. probably a better way....
 
-
-// most of the magic happens here 
-function whoseMoveIsIt(element) {
-    // add 1 to move counter
-    moves++;
-     // add element id to clickedSquares array
-
-    // alternate between x's and o's
-    if (moves % 2 === 0 && moves < 10) {  //  x/o logic
-
-        element.classList.add('playerO');
-        element.textContent = 'o'; 
-        currentMove = 'o';
-        gameMessage.textContent = 'It\'s X\'s Turn';
-        oClickedSquareIds.push(element.id);
-        console.log(oClickedSquareIds);
-        
-        
-    } else {
-
-        element.classList.add('playerX')
-        element.textContent = 'x';
-        currentMove = 'x';
-        gameMessage.textContent = 'It\'s O\'s Turn';
-        xClickedSquareIds.push(element.id);
-        console.log(xClickedSquareIds);
-    }
-
-    // reset move counter and gameMessage after 9 iterations
-    // playerO logic to prevent fencepost error
-    if (moves === 10) { 
-        element.classList.add('playerO');
-        element.textContent = 'o';
-        currentMove = 'o';
-        moves = 1;
-        gameMessage.textContent = 'Make a move!'; 
-        gameOver = true; 
-        // gameOver = true ties to potential play again logic. 
-        // if that logic placed in this scope, last result will not update prior to alert.
-        // as above, try coding it into the victory/catsgame logic
-    }  
-
-    
-    console.log(moves);
-    console.log(currentMove);
-    return element.textContent; // must return element.textContent for change to occur
-    
-};
+// BROKEN OBJECT KEY CHECKER
+// if (element.id in oMoveTracker){
+//     oMoveTracker[element.id].key++;
+//     console.log(true);
+//     console.log(oMoveTracker);
+//     return oMoveTracker;
+// }else{
+//     console.log('not found');
+// }
 
 // victory combo arrays
 
