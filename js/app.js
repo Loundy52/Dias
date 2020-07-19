@@ -1,11 +1,24 @@
 document.querySelector("#leftT").addEventListener("click", onClick1);
-
 function onClick1() {
-    var move1= document.querySelector("#leftT");
-    var xMove= document.createElement("h2");
-    xMove.textContent= "X";
-    move1.appendChild(xMove);
+    let checkX= document.querySelector("#X1");
+    let checkO= document.querySelector("#O1");
+    let move1= document.querySelector("#leftT");
+    let xMove= document.createElement("h2");
+    xMove.setAttribute("id", "X1");
+    let oMove= document.createElement("h3");
+    oMove.setAttribute("id", "O1");
+    checkX();
+    if (checkX === "null") {
+        xMove.textContent= "X";
+        move1.appendChild(xMove);
+    };
+    checkO();
+    if (checkO === "null") {
+            oMove.textContent= "O";
+            move1.appendChild(oMove);
+        }   
 }
+
 // document.querySelector("#midT").addEventListener("click", onClick2);
 // document.querySelector("#rightT").addEventListener("click", onClick3);
 // document.querySelector("#leftM").addEventListener("click", onClick4);
@@ -15,8 +28,6 @@ function onClick1() {
 // document.querySelector("#midB").addEventListener("click", onClick8);
 // document.querySelector("#rightB").addEventListener("click", onClick9);
 
-// let oMove= document.createElement("h3");
-// oMove.textContent= "O";
 
 // function onClick1() {
     //     if (X1.style.visiblity= "hidden")
