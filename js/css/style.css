@@ -1,0 +1,14 @@
+body {
+    font-style: 'Helvetica';
+}
+.tiktaketoe {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: auto auto auto;
+    color: red;
+  }
+  
+  #poison {
+    grid-column-start: 1;
+    color: yellow;
+  }

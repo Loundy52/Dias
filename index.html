@@ -3,12 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Front-End</title>
+  <title>Tanner's Tik-Tak-Toe</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-  <h1>Hello Front-End</h1>
+  <h1>Tik-Tak-Toe</h1>
+
+  <h3>please select your starting piece</h3>
+
+  <form>
+    <div id="optionSelector">
+      <input type="radio" id = "x" name="choice" value="0" >
+      X
+      <input type="radio" id = "o" name="choice" value="1">
+      O
+    </div>
+  </form> 
+
+  <section class="grid gridLines">
+    <div id = "box1" class="column1 hover1 boxCommand"></div>
+    <div id = "box2" class="column2 hover1 boxCommand"></div>
+    <div id = "box3" class="column3 hover1 boxCommand"></div>
+    <div id = "box4" class="column1 hover1 boxCommand"></div>
+    <div id = "box5" class="column2 hover1 boxCommand"></div>
+    <div id = "box6" class="column3 hover1 boxCommand"></div>
+    <div id = "box7" class="column1 hover1 boxCommand"></div>
+    <div id = "box8" class="column2 hover1 boxCommand"></div>
+    <div id = "box9" class="column3 hover1 boxCommand"></div>
+  </section>
 
   <script type="text/javascript" src="js/app.js"></script>
 </body>
+<footer id = "createdBy">created by Tanner Leigh</footer>
 </html>
