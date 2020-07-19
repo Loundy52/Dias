@@ -7,13 +7,11 @@ function onClick1() {
     xMove.setAttribute("id", "X1");
     let oMove= document.createElement("h3");
     oMove.setAttribute("id", "O1");
-    checkX();
-    if (checkX === "null") {
+    if (checkX === null) {
         xMove.textContent= "X";
         move1.appendChild(xMove);
-    };
-    checkO();
-    if (checkO === "null") {
+        console.log(checkX);
+    } else if (checkX !== null && checkO === null) {
             oMove.textContent= "O";
             move1.appendChild(oMove);
         }   
