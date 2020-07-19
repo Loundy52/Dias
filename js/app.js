@@ -5,6 +5,7 @@ let oClickedSquareIds = [];
 let xClickedSquareIds = [];
 let gameMessage = document.querySelector('h2');
 let squareIdArray = document.querySelectorAll('div.square');
+let gameOver = false;
 
 // main eventListener
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,13 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
             element.textContent = whoseMoveIsIt(element);
         });
     });
+    
 });
+
 
 // DONE click alternate between X and O (logic almost coded) 
 // DONE add class to marked cells to display separate players
 // DONE display message about which turn is being played
 // DONE fix fencepost error
 // DONE wrap line 10 event listener in DOMContentLoaded listener
+// DONE reset game-board logic
+
 
 // TODO devise victory logic
 // TODO check for winner after each turn
@@ -29,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // TODO detect winner with 3 in a row (determine set of winning combinations)
 // TODO linethrough winner w/ alert message / ask to play again
 // TODO catsgame alert conditions
-// TODO reset game-board
 
 
 // RESET GAME LOGIC
@@ -38,6 +42,24 @@ document.addEventListener('DOMContentLoaded', function() {
 //     return self;
 // });
 
+// POSSIBLE ENDGAME ALERT
+// last move wont print if placed in eventListener scope.
+// add to victory linethru/ catsgame logic
+
+// if (gameOver === true) {
+//     window.confirm('Play again?');
+// };
+
+// POSSIBLE VICTORY LOGIC
+// add counters for each victory for each player
+// if (xCounterLeft === 3 || xCounterMiddle === 3 || xCounterRight === 3) {
+//      console.log('victory!');
+// } else if (xCounterTop === 3 || xCounterCenter === 3 || xCounterBottom === 3) { 
+//      console.log('victory!);
+// } AND SO ON.... maybe a bit much. probably a better way....
+
+
+// most of the magic happens here 
 function whoseMoveIsIt(element) {
     // add 1 to move counter
     moves++;
@@ -72,11 +94,13 @@ function whoseMoveIsIt(element) {
         currentMove = 'o';
         moves = 1;
         gameMessage.textContent = 'Make a move!'; 
-        
-        // play again alert 
-
+        gameOver = true; 
+        // gameOver = true ties to potential play again logic. 
+        // if that logic placed in this scope, last result will not update prior to alert.
+        // as above, try coding it into the victory/catsgame logic
     }  
 
+    
     console.log(moves);
     console.log(currentMove);
     return element.textContent; // must return element.textContent for change to occur
