@@ -1,3 +1,81 @@
+body{
+  position: relative;
+  text-align: center;
+  background: aquamarine;
+  font-family: 'Permanent Marker', cursive;
+}
 h1 {
   color: purple;
+  font-size: 50px;
 }
+table{
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 300px;
+}
+td {
+  width: 33.3%;
+  height: 33.3%;
+  border: 6px solid darkblue;
+  font-size: 50px;
+  cursor:pointer;
+}
+#td-one{
+  border-top: transparent;
+  border-left: transparent;
+}
+#td-two{
+  border-top: transparent;
+}
+#td-three{
+  border-top: transparent;
+  border-right: transparent;
+}
+#td-four{
+  border-left: transparent;
+}
+#td-six{
+  border-right: transparent;
+}
+#td-seven{
+  border-left: transparent;
+  border-bottom: transparent;
+}
+#td-eight{
+  border-bottom: transparent;
+}
+#td-nine{
+  border-bottom: transparent;
+  border-right: transparent;
+}
+
+button{
+  margin: 50px auto;
+  background: purple;
+  color: lightblue;
+}
+.endContainer{
+  display: none;
+  position: absolute;
+  width: 250px;
+  top: 150px;
+  background: rgba(0,88,102,.9);
+  left: 50%;
+  margin-left: -175px;
+  padding: 50px;
+  text-align: center;
+  border: 5px solid purple;
+  color: 
+
+}
+
+/* .x {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 50px;
+}
+.o {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 50px;
+} */
