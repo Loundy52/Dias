@@ -12,7 +12,7 @@ body {
 }
 
 h2 {
-  height: 150px;
+  height: 100px;
   width: 150px;
   color: orange;
   font-size: 75px;
@@ -22,7 +22,7 @@ h2 {
 }
 
 h3 {
-  height: 150px;
+  height: 100px;
   width: 150px;
   color: orange;
   font-size: 75px;
@@ -44,7 +44,7 @@ h3 {
   height: 155px;
 }
 
-#leftC {
+#leftM {
   border-right: 5px solid orange;
   height: 155px;
 }
@@ -59,7 +59,7 @@ h3 {
   height: 155px;
 }
 
-#rightC {
+#rightM {
   border-left: 5px solid orange;
   height: 155px;
 }
@@ -81,4 +81,13 @@ h3 {
 
 .botRow {
   height: 145px;
+}
+
+.winner {
+  height: 150px;
+  width: 400px;
+  color: orange;
+  font-size: 100px;
+  text-align: center;
+  visibility: hidden;
 }
