@@ -5,16 +5,17 @@ function onClick1() {
     let move1= document.querySelector("#leftT");
     let xMove= document.createElement("h2");
     xMove.setAttribute("id", "X1");
+    let xRemove= document.querySelector("#X1");
     let oMove= document.createElement("h3");
     oMove.setAttribute("id", "O1");
-    if (checkX === null) {
-        xMove.textContent= "X";
+    if (checkX === null || checkO !== null) {
         move1.appendChild(xMove);
-        console.log(checkX);
+        xMove.textContent= "X";
     } else if (checkX !== null && checkO === null) {
-            oMove.textContent= "O";
-            move1.appendChild(oMove);
-        }   
+        move1.removeChild(xRemove);
+        move1.appendChild(oMove);
+        oMove.textContent= "O";
+    }   
 }
 
 // document.querySelector("#midT").addEventListener("click", onClick2);
