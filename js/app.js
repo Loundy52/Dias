@@ -15,34 +15,60 @@ let checkTurn = 1;
 const addO = "O";
 const addX = "X";
 
-
-boxOne.addEventListener('click', function(){
+function addMark(clickedBox) {
   if (checkTurn == 0) {
-    boxOne.innerHTML = addO;
-    boxOne.classList.add('player-two');
+    clickedBox.innerHTML = addO;
+    clickedBox.classList.add('player-two');
     checkTurn = 1;
     displayTurn.innerText = "Player One's Turn";
     this.removeEventListener('click', arguments.callee);
   } else if (checkTurn == 1) {
-    boxOne.innerHTML = addX;
-    boxOne.classList.add('player-one');
+    clickedBox.innerHTML = addX;
+    clickedBox.classList.add('player-one');
     checkTurn = 0;
     displayTurn.innerText = "Player Two's Turn";
     this.removeEventListener('click', arguments.callee);
   }
   winCondition();
+}
+
+boxOne.addEventListener('click', function (e) {
+  console.log(e.target);
+  addMark(e.target);
 });
+
+// boxOne.addEventListener('click', function(){
+//   if (checkTurn == 0) {
+//     boxOne.innerHTML = addO;
+//     boxOne.classList.add('player-two');
+//     checkTurn = 1;
+//     displayTurn.innerText = "Player One's Turn";
+//     this.removeEventListener('click', arguments.callee);
+//   } else if (checkTurn == 1) {
+//     boxOne.innerHTML = addX;
+//     boxOne.classList.add('player-one');
+//     checkTurn = 0;
+//     displayTurn.innerText = "Player Two's Turn";
+//     this.removeEventListener('click', arguments.callee);
+//   }
+//   winCondition();
+// });
+
 boxTwo.addEventListener('click', function () {
   if (checkTurn == 0) {
     boxTwo.innerHTML = addO;
     boxTwo.classList.add('player-two');
     checkTurn = 1;
     this.removeEventListener('click', arguments.callee);
+    displayTurn.innerText = "Player Two's Turn";
+
   } else if (checkTurn == 1) {
     boxTwo.innerHTML = addX;
     boxTwo.classList.add('player-one');
     checkTurn = 0;
     this.removeEventListener('click', arguments.callee);
+
+    displayTurn.innerText = "Player One's Turn";
   }
   winCondition();
 });
