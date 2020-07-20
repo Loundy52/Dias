@@ -32,9 +32,11 @@ for (i = 1; i<= 9); i++{
             } else{
                 box.textContent = '0';
                 box.classList.add('player_o')
-                switchPlayer++;
+                switchPlayer;
                 )
             }
         }
     }
 }
+
+//comment for reference
