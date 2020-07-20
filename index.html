@@ -7,20 +7,24 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-  <h1>Tik-Tak-Toe</h1>
+  <h1 id = "header">Tik-Tak-Toe</h1>
 
-  <h3>please select your starting piece</h3>
+  <h3 id = "select">please select your starting piece</h3>
 
-  <form>
+  <form id = "myForm" name = "myForm">
     <div id="optionSelector">
-      <input type="radio" id = "x" name="choice" value="0" >
+      <input type="radio" id = "x" name="choice" value="0" checked>
       X
       <input type="radio" id = "o" name="choice" value="1">
       O
     </div>
-  </form> 
 
-  <section class="grid gridLines">
+  <div>
+    <h4 id = "takeTurns"> turn: x </h4>
+  </div>
+ 
+
+  <section class="grid gridLines" id = "boxes">
     <div id = "box1" class="column1 hover1 boxCommand"></div>
     <div id = "box2" class="column2 hover1 boxCommand"></div>
     <div id = "box3" class="column3 hover1 boxCommand"></div>
@@ -32,7 +36,14 @@
     <div id = "box9" class="column3 hover1 boxCommand"></div>
   </section>
 
-  <script type="text/javascript" src="js/app.js"></script>
+
+  <div>
+    <button id = "resetButton">try again</button>
+  </div>
+
+</form> 
+
+  <script type = "text/javascript" src = "js/app.js"></script>
 </body>
 <footer id = "createdBy">created by Tanner Leigh</footer>
 </html>

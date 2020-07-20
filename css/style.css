@@ -3,12 +3,12 @@ body {
   text-align: center;
 }
 
-h1 {
+#header {
   margin: 60px 0px 0px 0px;
   font-size: 80px;
 }
 
-h3 {
+#select {
   margin: 30px 0px -20px 0px;
 }
 
@@ -17,7 +17,7 @@ h3 {
 }
 
 #createdBy {
-  margin-top: 215%;
+  margin-top: 2%;
   color: gray;
 }
 
@@ -95,7 +95,19 @@ h3 {
   grid-row-start: 3;
 }
 
-.container-one {
+p {
   color: black;
-  font-size: 40px;
+  margin: 40% 0px 0px 0px;
+}
+
+h4 {
+  margin: 80px 0px -60px 0px;
+}
+
+.container {
+  font-size: 20px;
+}
+
+button {
+  margin: 5px 0px 0px 0px;
 }
