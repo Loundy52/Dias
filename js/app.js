@@ -32,8 +32,7 @@ square1.addEventListener("click", function() {
         square1.classList.add("player1");
         checkTurn = 0;
         displayTurn.innerText = "Player2, you're up!"
-    }
-    checkWin();
+    } 
 });
 
 square2.addEventListener("click", function () {
@@ -47,8 +46,8 @@ square2.addEventListener("click", function () {
         square2.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    }
-    checkWin()
+    } 
+    
 });
 
 square3.addEventListener("click", function () {
@@ -62,8 +61,8 @@ square3.addEventListener("click", function () {
         square3.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    }
-    checkWin()
+    } checkWin1();
+   
 });
 
 square4.addEventListener("click", function () {
@@ -77,8 +76,8 @@ square4.addEventListener("click", function () {
         square3.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    }
-    checkWin()
+    } checkWin1();
+    
 });
 
 square5.addEventListener("click", function () {
@@ -92,8 +91,8 @@ square5.addEventListener("click", function () {
         square5.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    }
-    checkWin()
+    } checkWin1();
+    
 });
 
 square6.addEventListener("click", function () {
@@ -107,8 +106,8 @@ square6.addEventListener("click", function () {
         square6.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    }
-    checkWin()
+    } checkWin1();
+   
 });
 
 square7.addEventListener("click", function () {
@@ -122,7 +121,8 @@ square7.addEventListener("click", function () {
         square7.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    }
+    } checkWin1();
+    
 });
 
 square8.addEventListener("click", function () {
@@ -136,8 +136,8 @@ square8.addEventListener("click", function () {
         square8.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    }
-    checkWin()
+    } 
+   
 });
 
 square9.addEventListener("click", function () {
@@ -151,32 +151,48 @@ square9.addEventListener("click", function () {
         square9.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    }
-    checkWin()
+    } checkWin1();
+    
 });
 
-//checks for a winner
-//winning combos - grid model
-let grid = {
-    row1: ["1", "2", "3"],
-    row2: ["4", "5", "6"],
-    row3: ["7", "8", "9"]
-}
+//checks for a winner??? 
 
 let announceWinner = document.querySelector(".announceWinner");
 
-function checkWin(element){
-    grid.row1[0] = document.getElementById("square1");
-    grid.row1[1] = document.getElementById("square2");
-    grid.row1[2] = document.getElementById("square3");
+function checkWin1() {
+    let one = document.querySelector("#square1").className;
+    let two = document.querySelector("#square2").className;
+    let three = document.querySelector("#square3").className;
+    let four = document.querySelector("#square4").className;
+    let five = document.querySelector("#square5").className;
+    let six = document.querySelector("#square6").className;
+    let seven = document.querySelector("#square7").className;
+    let eight = document.querySelector("#square8").className;
+    let nine = document.querySelector("#square9").className;
+    let announceWinner = document.querySelector(".announceWinner");
 
-    if (grid.row1[0].textContent === "o" && grid.row1[1].textContent === "o" && grid.row1[2].textContent === "o") {
-        announceWinner.innerText = "Player1 Wins!";
-    } else if (grid.row1[0].textContent === "x" && grid.row1[1].textContent === "x" && grid.row1[2].textContent === "x") {
-        announceWinner.innerText = "Player2 Wins!";
+    if (one === player1 && one === player1 && two === player1) {
+        if (checkTurn === 0) {
+            announceWinner.innerText = "Player1 is the winner!";
+        } else {
+            announceWinner.innerText = "Player2 is the winner!";
+        }
+    } else if (four === player1 && five === player1 && four === player1) {
+        if (checkTurn === 0) {
+            announceWinner.innerText = "Player1 is the winner!";
+        } else {
+            announceWinner.innerText = "Player2 is the winner!";
+        } 
+    } else if (seven === eight && eight === nine && seven === nine) {
+        if (checkTurn === 0) {
+            announceWinner.innerText = "Player1 is the winner!";
+        } else {
+            announceWinner.innerText = "Player2 is the winner!";
+        }
     }
 }
-document.querySelectorAll(".Row").addEventListener("click", checkWin, grid);
+
+
 
 });
 //clears squares and player turn message
@@ -191,5 +207,6 @@ function clearAllSquares() {
     document.querySelector("#square8").textContent = " ";
     document.querySelector("#square9").textContent = " ";
     document.querySelector(".alert").textContent = " ";
+    document.querySelector(".announceWinner").textContent = " ";
 }
 document.querySelector("button").addEventListener("click", clearAllSquares);
