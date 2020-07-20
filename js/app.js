@@ -1,5 +1,6 @@
 var moveCount = 0;
 const boxes = [document.getElementById("1"), document.getElementById("2"), document.getElementById("3"), document.getElementById("4"), document.getElementById("5"), document.getElementById("6"), document.getElementById("7"), document.getElementById("8"), document.getElementById("9")];
+const button = document.querySelector("button");
 
 function whoMove()
 {
@@ -117,7 +118,7 @@ function endGame()
             }
         });
     }
-    if (moveCount === 9)
+    else if (moveCount === 9)
     {
         let message = document.querySelector("p");
         message.textContent = "Tie Game (Cat's Game)!!"
@@ -126,6 +127,8 @@ function endGame()
 
 function reset()
 {
+    moveCount = 0;
+    
     let message = document.querySelector("p");
     message.textContent = "X goes first!";
 
@@ -134,7 +137,7 @@ function reset()
         box.textContent = "";
         box.classList.remove("player-X");
         box.classList.remove("player-O");
-        box.style.backgroundColor = "none";
+        box.style.backgroundColor = "white";
     });
 }
 
@@ -158,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function()
                 }
                 console.log(box.classList);
                 moveCount++;
+                console.log(moveCount);
                 whoMove();
                 checkWins();
                 endGame();
@@ -165,5 +169,5 @@ document.addEventListener('DOMContentLoaded', function()
         });
     });
 
-
+    button.addEventListener("click", reset);
 });
