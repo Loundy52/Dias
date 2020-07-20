@@ -1,3 +1,74 @@
+
+body {
+  text-align: center;
+  font-family: 'Archivo', sans-serif;
+  background-color: grey;
+}
+
 h1 {
-  color: purple;
+  background: black;
+  color: white;
+  font-size: 45px;
+}
+
+h2 {
+  color: rgba(0, 0, 0, 0.37);
+}
+
+.player1 {
+  color: black;
+}
+
+.player2 {
+  color: blueviolet;
+}
+
+.alert {
+  font-size: 30px;
+  font-style: bold;
+}
+
+.headings {
+  width: 600px;
+  height: 200px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.allSquares {
+  font-size: 110px;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.square {
+  height: 160px;
+  width: 160px;
+  background: white;
+  padding: 15px;
+  margin: 0 auto; 
+  border: black solid 2px;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+}
+
+.clearGame {
+  text-align: center;
+  padding: 5px;
+}
+
+button {
+  width: 190px;
+  height: 50px;
+  font-size: 24px;
+  font-family: 'Archivo', sans-serif; 
+  background-color: black;
+  color: white;
 }
