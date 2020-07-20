@@ -34,14 +34,14 @@ startTitle(createFourth, 1700);
 //create game play 
 //set event listeners for each square
 const winningCombos = [
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6]
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
 ];
 
 
@@ -61,7 +61,7 @@ document.getElementById('mainElement').addEventListener('click', handleTurn);
 function score(){
 let player = null;
 winningCombos.forEach(function(combo, index){
-    if (gameboard[combo[0]] && gameboard[combo[0]] === gameboard[combo[1]] && gameboard[combo[0]] === gameboard[combo[2]]) winner = gameboard[combo[0]];
+    if (gameboard[combo[0]] && gameboard[combo[0]] === gameboard[combo[1]] && gameboard[combo[0]] === gameboard[combo[2]]) player = gameboard[combo[0]];
 });
     return player ? player: gameboard.includes('') ? null : 'T';
 };
@@ -90,7 +90,7 @@ function start() {
 function play() {
     gameboard.forEach(function(mark, index) {
     console.log(mark, index)
-    gameboard[index].textContent = mark; //some issue where it isn't marking into the grid array...
+    gameboard[index].textContent = mark;
     grid[index].src = mark;
     });
     messages.textContent = win === 'T' ? `Stalemate, wait for next season` : win ? `${win} wins the game!` : `It's ${mark}'s turn!`;
