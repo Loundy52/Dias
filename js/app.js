@@ -1,6 +1,6 @@
 //define the players and their symbol of choice
-let player1 = "o";
-let player2 = "x";
+let player1 = "x";
+let player2 = "o";
 
 //this is the DOM part!!!
 document.addEventListener("DOMContentLoaded", function(){
@@ -76,7 +76,7 @@ square4.addEventListener("click", function () {
         square3.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    } checkWin1();
+    } 
     
 });
 
@@ -155,8 +155,8 @@ square9.addEventListener("click", function () {
     
 });
 
-//checks for a winner??? 
 
+//checks for a winner??? 
 let announceWinner = document.querySelector(".announceWinner");
 
 function checkWin1() {
@@ -171,7 +171,12 @@ function checkWin1() {
     let nine = document.querySelector("#square9").className;
     let announceWinner = document.querySelector(".announceWinner");
 
-    if (one === player1 && one === player1 && two === player1) {
+
+    //trying to refactor code to assign winning conditions
+    let row1 = [one, two, three];
+
+
+    if (row1 === true) {
         if (checkTurn === 0) {
             announceWinner.innerText = "Player1 is the winner!";
         } else {
@@ -192,10 +197,6 @@ function checkWin1() {
     }
 }
 
-
-
-});
-//clears squares and player turn message
 function clearAllSquares() {
     document.querySelector("#square1").textContent = " ";
     document.querySelector("#square2").textContent = " ";
@@ -210,3 +211,8 @@ function clearAllSquares() {
     document.querySelector(".announceWinner").textContent = " ";
 }
 document.querySelector("button").addEventListener("click", clearAllSquares);
+
+
+});
+//clears squares and player turn message
+
