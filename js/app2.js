@@ -13,16 +13,25 @@ document.addEventListener('DOMContentLoaded', function() {
         element.addEventListener('click', function() {
             console.log(element);
             element.textContent = whoseMoveIsIt(element);
+            console.log(moves);
+            console.log(gameOver);
+            if (gameOver === true) {
+                setTimeout(gameOverMan(element), 1000);
+            } 
             
         });
-
+        
     });  
     
-
 });
 
 
-
+function gameOverMan (element) {
+    moves = 1;
+    gameOver = false;
+    console.log('it worked');
+    confirm('play again?');
+};
 
 // most of the logic happens here 
 // all of this occurs on a click
