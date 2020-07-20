@@ -1,65 +1,63 @@
-h1 {
-  text-align: center;
-  color: black;
+* {
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
 }
 
-body{
-  box-sizing: border-box;
-
-}
-
-.container{
-  margin: 0 auto; 
-  display: grid;
-  align-items: center;
+body {
+  color: blue;
+  display: flex; /* manipulate */
+  font-family: monospace;
   justify-content: center;
-  width: 300px;
-  height: 300px;
-  padding: 30px 30px 30px 30px;
-  grid-template-columns: repeat(3,auto);
 }
 
-.block{
-  width: 100px;
-  height: 100px;
-  padding: 0px 5px 0px 5px;
-  border: 3px solid black;
-  border-top: none;
-  font-size: 3rem;
-  font-weight: bold;
+.container {
+  background: lightblue;
+  margin: 50px;
+  padding: 50px;
+  border-radius: 25px;
 }
 
-#block-zero{
-  border-left: none;
+.game-name {
+  text-align: center;
 }
 
-#block-two{
-  border-right: none;
-}
-#block-three{
-  border-left: none;
-}
-
-#block-five{
-  border-right: none;
+.status-reset {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  height: 20px;
+  font-size: 20px;
 }
 
-#block-six{
-  border-left: none;
-  border-bottom: none;
+.button {
+  cursor: pointer;
 }
 
-#block-seven{
-  border-bottom: none;
+.button:hover{
+  color: red;
 }
 
-#block-eight{
-  border-right: none;
-  border-bottom: none;
+.div-board {
+  background: black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 20px;
+  margin: 15px;
 }
 
+.block {
+  background: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 200px;
+  width: 200px;
+  font-size: 80px;
+}
 
-
-
-
-
+.red {
+  background: red;
+}
