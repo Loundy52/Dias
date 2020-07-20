@@ -1,3 +1,40 @@
-h1 {
+h1 
+{
   color: purple;
+}
+
+.grid
+{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+ul
+{
+  list-style: none;
+  padding: 0;
+}
+
+li
+{
+  border: 2px solid black;
+  border-style: none none solid none;
+  width: 20px;
+  height: 20px;
+}
+
+.col2 li
+{
+  border-style: none solid solid solid;
+}
+
+li.bot
+{
+  border-bottom-style: none;
+}
+
+li:hover
+{
+  background-color: gray;
 }
