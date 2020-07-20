@@ -33,7 +33,7 @@ function boxOne(){
     if (boxOneClicked == false){
         if (turnCounter%2 === 0){ //player
             blockOne.textContent = player1; //every other click does something different
-            winStatus();
+            
         } else {
             
             blockOne.textContent = player2; //every other click does something different
@@ -49,30 +49,27 @@ function boxTwo(){
     if (boxTwoClicked == false){
         if (turnCounter%2 === 0){ //player
             blockTwo.textContent = player1; //every other click does something different
+            
         } else {
             blockTwo.textContent = player2; //every other click does something different
         }
         turnCounter++;
     }
-
-    
     boxTwoClicked = true;
-    
 }
+
 
 let boxThreeClicked = false;
 function boxThree(){
     if(boxThreeClicked == false){
         if (turnCounter%2 === 0){ //player
-            blockThree.textContent = player1; //every other click does something different
-            
+            blockThree.textContent = player1; //every other click does something different     
         } else {
             blockThree.textContent = player2; //every other click does something different
         }
         turnCounter++;
     }
-     boxThreeClicked = true; 
-    
+    boxThreeClicked = true; 
 }
 
 
@@ -102,6 +99,7 @@ function boxFive(){
     boxFiveClicked = true;   
 }
 
+
 let boxSixClicked = false;
 function boxSix(){
     if(boxSixClicked == false){
@@ -125,7 +123,7 @@ function boxSeven(){
         }
         turnCounter++; 
     }
-       boxSevenClicked = true;
+    boxSevenClicked = true;
 }
 
 
@@ -139,7 +137,7 @@ function boxEight(){
         }
         turnCounter++;
     }
-       boxEightClicked = true; 
+    boxEightClicked = true; 
 }
 
 let boxNineClicked = false;
@@ -152,7 +150,7 @@ function boxNine(){
         }
         turnCounter++;   
     }
-     boxNineClicked = true;
+    boxNineClicked = true;
 }
 
 function resetButton(){
@@ -211,3 +209,5 @@ function resetButton(){
 
 
 // if topleft === topmid && topleft === topleft && topright != "box"
+
+
