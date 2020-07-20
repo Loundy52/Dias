@@ -1,10 +1,10 @@
-//defining all the square
+//define the players and their symbol of choice
 let player1 = "o";
 let player2 = "x";
 
 //this is the DOM part!!!
 document.addEventListener("DOMContentLoaded", function(){
-    
+  //select each square on gameboard  
     let square1 = document.querySelector("#square1")
     let square2 = document.querySelector("#square2")
     let square3 = document.querySelector("#square3")
@@ -18,23 +18,22 @@ document.addEventListener("DOMContentLoaded", function(){
 //function to switch player
 let displayTurn = document.querySelector(".alert");
 checkTurn = 1;
-const player1 = "o";
-const player2 = "x";
 
 square1.addEventListener("click", function() {
     //alternating between different turns
     //o goes first
-    if (checkTurn == 0) {
-        square1.textContent = player1;
+    if (checkTurn == 0) { 
+        square1.textContent = player1; //inputs square 1 with o
         square1.classList.add("player2"); // adding a class to display the seperate players
-        checkTurn = 1;
+        checkTurn = 1; //declares this is the first turm
         displayTurn.textContent = "Player1, it's your turn!";
-    } else if (checkTurn == 1) {
+    } else if (checkTurn == 1) { 
         square1.textContent = player2;
         square1.classList.add("player1");
         checkTurn = 0;
-        displayTurn.innerText = "Player2, it's your turn!"
+        displayTurn.innerText = "Player2, you're up!"
     }
+    checkWin();
 });
 
 square2.addEventListener("click", function () {
@@ -47,8 +46,9 @@ square2.addEventListener("click", function () {
         square2.textContent = player2;
         square2.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, it's your turn!";
+        displayTurn.textContent = "Player2, you're up!";
     }
+    checkWin()
 });
 
 square3.addEventListener("click", function () {
@@ -61,8 +61,9 @@ square3.addEventListener("click", function () {
         square3.textContent = player2;
         square3.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, it's your turn!";
+        displayTurn.textContent = "Player2, you're up!";
     }
+    checkWin()
 });
 
 square4.addEventListener("click", function () {
@@ -75,8 +76,9 @@ square4.addEventListener("click", function () {
         square3.textContent = player2;
         square3.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, it's your turn!";
+        displayTurn.textContent = "Player2, you're up!";
     }
+    checkWin()
 });
 
 square5.addEventListener("click", function () {
@@ -89,8 +91,9 @@ square5.addEventListener("click", function () {
         square5.textContent = player2;
         square5.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, it's your turn!";
+        displayTurn.textContent = "Player2, you're up!";
     }
+    checkWin()
 });
 
 square6.addEventListener("click", function () {
@@ -103,8 +106,9 @@ square6.addEventListener("click", function () {
         square6.textContent = player2;
         square6.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, it's your turn!";
+        displayTurn.textContent = "Player2, you're up!";
     }
+    checkWin()
 });
 
 square7.addEventListener("click", function () {
@@ -117,7 +121,7 @@ square7.addEventListener("click", function () {
         square7.textContent = player2;
         square7.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, it's your turn!";
+        displayTurn.textContent = "Player2, you're up!";
     }
 });
 
@@ -131,8 +135,9 @@ square8.addEventListener("click", function () {
         square8.textContent = player2;
         square8.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, it's your turn!";
+        displayTurn.textContent = "Player2, you're up!";
     }
+    checkWin()
 });
 
 square9.addEventListener("click", function () {
@@ -145,42 +150,36 @@ square9.addEventListener("click", function () {
         square9.textContent = player2;
         square9.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, it's your turn!";
+        displayTurn.textContent = "Player2, you're up!";
     }
+    checkWin()
 });
 
 //checks for a winner
-function checkWin(){
-    if (square1.innerHTML === "o" &&
-      square2.innerHTML === "o" &&
-      square3.innerHTML === "o"
-    ) { document.querySelector(".alert").textContent = "player1 wins!"}
-    else if (
-      square4.innerHTML === "o" &&
-      square5.innerHTML === "o" &&
-      square6.innerHTML === "o"
-    ) { alert("Win")}
-     else if (
-      square7.innerHTML === "o" &&
-      square8.innerHTML === "o" &&
-      square9.innerHTML === "o"
-    ) { alert("Win")} 
-    else if (
-        square3.innerHTML === "o" &&
-        square5.innerHTML === "o" &&
-        square7.innerHTML === "o"
-      ) { alert("Win")} 
-      else if (
-        square1.innerHTML === "o" &&
-        square5.innerHTML === "o" &&
-        square9.innerHTML === "o"
-      ) { alert("Win")} 
-  }
+//winning combos - grid model
+let grid = {
+    row1: ["1", "2", "3"],
+    row2: ["4", "5", "6"],
+    row3: ["7", "8", "9"]
+}
 
+let announceWinner = document.querySelector(".announceWinner");
 
-//tells computer to wait for player turn to make a choice
+function checkWin(element){
+    grid.row1[0] = document.getElementById("square1");
+    grid.row1[1] = document.getElementById("square2");
+    grid.row1[2] = document.getElementById("square3");
+
+    if (grid.row1[0].textContent === "o" && grid.row1[1].textContent === "o" && grid.row1[2].textContent === "o") {
+        announceWinner.innerText = "Player1 Wins!";
+    } else if (grid.row1[0].textContent === "x" && grid.row1[1].textContent === "x" && grid.row1[2].textContent === "x") {
+        announceWinner.innerText = "Player2 Wins!";
+    }
+}
+document.querySelectorAll(".Row").addEventListener("click", checkWin, grid);
+
 });
-
+//clears squares and player turn message
 function clearAllSquares() {
     document.querySelector("#square1").textContent = " ";
     document.querySelector("#square2").textContent = " ";

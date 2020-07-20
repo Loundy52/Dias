@@ -2,17 +2,20 @@
 body {
   text-align: center;
   font-family: 'Archivo', sans-serif;
-  background-color: grey;
+  background-image: url("https://cdn3.vectorstock.com/i/1000x1000/72/82/background-template-for-covers-flyers-banners-vector-13997282.jpg");
+  background-color: #CDCDCD;
+  background-size: cover;
+  background-blend-mode: lighten;
 }
 
 h1 {
-  background: black;
   color: white;
   font-size: 45px;
 }
 
 h2 {
-  color: rgba(0, 0, 0, 0.37);
+  color: white;
+  font-size: 20px;
 }
 
 .player1 {
@@ -24,17 +27,28 @@ h2 {
 }
 
 .alert {
-  font-size: 30px;
+  font-size: 15px;
   font-style: bold;
+  font-family: 'Archivo', sans-serif;
+  color: white;
+}
+
+.announceWinner {
+  font-size: 25px;
+  font-style: bold;
+  font-family: 'Archivo', sans-serif;
+
 }
 
 .headings {
-  width: 600px;
-  height: 200px;
+  width: 570px;
+  height: 210px;
   text-align: center;
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 10px;
+  background-color: black;
+  padding: 10px;
 }
 
 .allSquares {
@@ -71,4 +85,8 @@ button {
   font-family: 'Archivo', sans-serif; 
   background-color: black;
   color: white;
+}
+
+button:hover {
+  opacity: .5;
 }
