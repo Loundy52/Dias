@@ -59,7 +59,7 @@ document.getElementById('mainElement').addEventListener('click', handleTurn);
 //determine if a win happened
 
 function score(){
-let player = null;
+let player = null; //sets a function that sets if the gameboard is == to winningCombo, and logs player as the mark in order to later dictate messaging.
 winningCombos.forEach(function(combo, index){
     if (gameboard[combo[0]] && gameboard[combo[0]] === gameboard[combo[1]] && gameboard[combo[0]] === gameboard[combo[2]]) player = gameboard[combo[0]];
 });
@@ -68,7 +68,7 @@ winningCombos.forEach(function(combo, index){
 
 //lot a turn's result
 
-function handleTurn() {
+function handleTurn() { //sets three things for turn. adds the play, marks the score board, and changes the mark to the next player
     let idx = grid.findIndex(function(square) {
         return square === event.target;
     });
@@ -78,7 +78,7 @@ function handleTurn() {
     play();
 };
 
-function start() {
+function start() { //creates a gameboard to run against the winning combos.
     gameboard = [
     '', '', '',
     '', '', '',
@@ -88,7 +88,7 @@ function start() {
 };
 
 function play() {
-    gameboard.forEach(function(mark, index) {
+    gameboard.forEach(function(mark, index) { //brings it home. 
     console.log(mark, index)
     gameboard[index].textContent = mark;
     grid[index].src = mark;
@@ -96,5 +96,3 @@ function play() {
     messages.textContent = win === 'T' ? `Stalemate, wait for next season` : win ? `${win} wins the game!` : `It's ${mark}'s turn!`;
     };
 start();
-console.log(grid);
-console.log(grid[2]);
