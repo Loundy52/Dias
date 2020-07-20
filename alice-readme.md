@@ -1,5 +1,4 @@
 
-
 ## Tic-tak-toe project
 
 ### Lists
@@ -50,4 +49,10 @@ This snippet of code shows that how 'O' and 'X' images displayed when a player c
 
 ## Link 
 (file:///Users/aliceaekyunglee/Desktop/general_assembly/Unit1/homework/tik-tak-toe/index.html)
+
+
+  
+
+
+
 

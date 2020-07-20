@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPlayer = 'Player X'
     squares.forEach(square => {
         square.addEventListener('click', clickOutcome)
-});
+    });
 
 
     function clickOutcome(e) {
@@ -33,24 +33,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         //const playerX = document.querySelector('.playerX')
         //const playerO = document.querySelector('.playerO')
-        const empty = null;
+       
         
 
         //result 
-        if((squares[0]!== empty)&&(squares[0] == squares[1])&&(squares[1] == squares[2])){
-            return 
-            }else if ((squares[3]!== empty)&&(squares[3] == squares[4])&&(squares[4]== squares[5])){
+        if((squares[0]!== "square")&&(squares[0].classList == squares[1].classList)&&(squares[1].classList == squares[2].classList)){
+                return resultM ("You win")
+            }else if ((squares[3].classList!== "square")&&(squares[3].classList == squares[4].classList)&&(squares[4].classList== squares[5].classList)){
                 resultM ("You win!")
-            }else if ((squares[6]!== empty)&&(squares[6] == squares[7])&&(squares[7]== squares[8])){
+            }else if ((squares[6]!== "square")&&(squares[6] == squares[7])&&(squares[7]== squares[8])){
                 resultM ("You win!")
-            }else if ((squares[0]!== empty)&&(squares[0] == squares[3])&&(squares[3]== squares[6])){
+            }else if ((squares[0]!== "square")&&(squares[0] == squares[3])&&(squares[3]== squares[6])){
                 resultM ("You win!")
-            }else if ((squares[1]!== empty)&&(squares[1] == squares[4])&&(squares[4]== squares[7])){
+            }else if ((squares[1]!== "square")&&(squares[1] == squares[4])&&(squares[4]== squares[7])){
                 resultM ("You win!")
-            }else if((squares[2]!== empty)&&(squares[2] == squares[5])&&(squares[5]== squares[8])){
+            }else if((squares[2]!== "square")&&(squares[2] == squares[5])&&(squares[5]== squares[8])){
                 resultM ("You win!")
             }
-        else if(squares[0]&&squares[1]&&squares[2]&&squares[3]&&squares[4]&&squares[5]&&squares[6]&&squares[7]&&squares[8] != empty)
+        else if(squares[0]&&squares[1]&&squares[2]&&squares[3]&&squares[4]&&squares[5]&&squares[6]&&squares[7]&&squares[8] != "square")
                 resultM ("it's a tie")
 
             function resultM(result){
