@@ -34,47 +34,64 @@ function whatMove()
 
 function checkWins()
 {
+    let message = document.querySelector("p");
     if (boxes[0].textContent !== "" && boxes[0].textContent === boxes[1].textContent && boxes[1].textContent === boxes[2].textContent)
     {
         console.log("Player " + boxes[0].textContent + " won!!!");
+        message.textContent = "Player " + boxes[0].textContent + " wins!!!";
     }
     if (boxes[3].textContent !== "" && boxes[3].textContent === boxes[4].textContent && boxes[4].textContent === boxes[5].textContent)
     {
         console.log("Player " + boxes[3].textContent + " won!!!");
+        message.textContent = "Player " + boxes[3].textContent + " wins!!!";
     }
     if (boxes[6].textContent !== "" && boxes[6].textContent === boxes[7].textContent && boxes[7].textContent === boxes[8].textContent)
     {
         console.log("Player " + boxes[6].textContent + " won!!!");
+        message.textContent = "Player " + boxes[6].textContent + " wins!!!";
     }
 
     if (boxes[0].textContent !== "" && boxes[0].textContent === boxes[3].textContent && boxes[3].textContent === boxes[6].textContent)
     {
         console.log("Player " + boxes[0].textContent + " won!!!");
+        message.textContent = "Player " + boxes[0].textContent + " wins!!!";
     }
     if (boxes[1].textContent !== "" && boxes[1].textContent === boxes[4].textContent && boxes[4].textContent === boxes[7].textContent)
     {
         console.log("Player " + boxes[1].textContent + " won!!!");
+        message.textContent = "Player " + boxes[1].textContent + " wins!!!";
     }
     if (boxes[2].textContent !== "" && boxes[2].textContent === boxes[5].textContent && boxes[5].textContent === boxes[8].textContent)
     {
         console.log("Player " + boxes[2].textContent + " won!!!");
+        message.textContent = "Player " + boxes[2].textContent + " wins!!!";
     }
 
     if (boxes[0].textContent !== "" && boxes[0].textContent === boxes[4].textContent && boxes[4].textContent === boxes[8].textContent)
     {
         console.log("Player " + boxes[0].textContent + " won!!!");
+        message.textContent = "Player " + boxes[0].textContent + " wins!!!";
     }
     if (boxes[2].textContent !== "" && boxes[2].textContent === boxes[4].textContent && boxes[4].textContent === boxes[6].textContent)
     {
         console.log("Player " + boxes[2].textContent + " won!!!");
+        message.textContent = "Player " + boxes[2].textContent + " wins!!!";
     }
 }
 
 function endGame()
 {
-    if (boxes[0].textContent !== "" && boxes[0].textContent === boxes[1].textContent && boxes[1].textContent === boxes[2].textContent)
+    let message = document.querySelector("p");
+    if (message.textContent === "Player X wins!!!" || message.textContent === "Player O wins!!!")
     {
-        
+        console.log("YAAY!");
+        boxes.forEach(box =>
+        {
+            if (box.textContent !== "X" && box.textContent !== "O")
+            {
+                box.textContent = " ";
+            }
+        });
     }
     if (moveCount === 9)
     {
@@ -83,13 +100,15 @@ function endGame()
     }
 }
 
+
+
 document.addEventListener('DOMContentLoaded', function()
 {
     boxes.forEach(box =>
     {
         box.addEventListener("click", function() 
         {
-            if (box.textContent !== "X" && box.textContent !== "O" box.textContent !== " ")
+            if (box.textContent !== "X" && box.textContent !== "O" && box.textContent !== " ")
             {
                 box.textContent = whatMove();
                 moveCount++;
