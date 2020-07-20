@@ -1,9 +1,6 @@
 ![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
 
 # Tic Tac Toe
-# read me practice 
-
-
 
 ## Objectives
 
