@@ -3,7 +3,14 @@ h1 {
 }
 .gameboard{
   display: grid;
-  grid-template: 120fr 120fr 120fr / 120fr 120fr 120fr;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
   flex-flow: row wrap;
+  width: 630px;
+  height:630px
 }
-
+.square{
+  width:210px;
+  height:210px;
+  margin: 0px;
+  border: 5px solid black;
+}
