@@ -1,3 +1,41 @@
+
+body{
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+}
+
 h1 {
   color: purple;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 610px;
+  height: 610px; 
+  background-color: black;
+  
+  
+}
+
+.grid-container div {
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  margin-bottom: 5px;
+  
+}
+
+.playerX {
+  background-image: url('x.png');
+}
+.playerO {
+  background-image: url('circle.png');
 }
