@@ -39,43 +39,67 @@ function checkWins()
     {
         console.log("Player " + boxes[0].textContent + " won!!!");
         message.textContent = "Player " + boxes[0].textContent + " wins!!!";
+        boxes[0].style.backgroundColor = "pink";
+        boxes[1].style.backgroundColor = "pink";
+        boxes[2].style.backgroundColor = "pink";
     }
     if (boxes[3].textContent !== "" && boxes[3].textContent === boxes[4].textContent && boxes[4].textContent === boxes[5].textContent)
     {
         console.log("Player " + boxes[3].textContent + " won!!!");
         message.textContent = "Player " + boxes[3].textContent + " wins!!!";
+        boxes[3].style.backgroundColor = "pink";
+        boxes[4].style.backgroundColor = "pink";
+        boxes[5].style.backgroundColor = "pink";
     }
     if (boxes[6].textContent !== "" && boxes[6].textContent === boxes[7].textContent && boxes[7].textContent === boxes[8].textContent)
     {
         console.log("Player " + boxes[6].textContent + " won!!!");
         message.textContent = "Player " + boxes[6].textContent + " wins!!!";
+        boxes[6].style.backgroundColor = "pink";
+        boxes[7].style.backgroundColor = "pink";
+        boxes[8].style.backgroundColor = "pink";
     }
 
     if (boxes[0].textContent !== "" && boxes[0].textContent === boxes[3].textContent && boxes[3].textContent === boxes[6].textContent)
     {
         console.log("Player " + boxes[0].textContent + " won!!!");
         message.textContent = "Player " + boxes[0].textContent + " wins!!!";
+        boxes[0].style.backgroundColor = "pink";
+        boxes[3].style.backgroundColor = "pink";
+        boxes[6].style.backgroundColor = "pink";
     }
     if (boxes[1].textContent !== "" && boxes[1].textContent === boxes[4].textContent && boxes[4].textContent === boxes[7].textContent)
     {
         console.log("Player " + boxes[1].textContent + " won!!!");
         message.textContent = "Player " + boxes[1].textContent + " wins!!!";
+        boxes[1].style.backgroundColor = "pink";
+        boxes[4].style.backgroundColor = "pink";
+        boxes[7].style.backgroundColor = "pink";
     }
     if (boxes[2].textContent !== "" && boxes[2].textContent === boxes[5].textContent && boxes[5].textContent === boxes[8].textContent)
     {
         console.log("Player " + boxes[2].textContent + " won!!!");
         message.textContent = "Player " + boxes[2].textContent + " wins!!!";
+        boxes[2].style.backgroundColor = "pink";
+        boxes[5].style.backgroundColor = "pink";
+        boxes[8].style.backgroundColor = "pink";
     }
 
     if (boxes[0].textContent !== "" && boxes[0].textContent === boxes[4].textContent && boxes[4].textContent === boxes[8].textContent)
     {
         console.log("Player " + boxes[0].textContent + " won!!!");
         message.textContent = "Player " + boxes[0].textContent + " wins!!!";
+        boxes[0].style.backgroundColor = "pink";
+        boxes[4].style.backgroundColor = "pink";
+        boxes[8].style.backgroundColor = "pink";
     }
     if (boxes[2].textContent !== "" && boxes[2].textContent === boxes[4].textContent && boxes[4].textContent === boxes[6].textContent)
     {
         console.log("Player " + boxes[2].textContent + " won!!!");
         message.textContent = "Player " + boxes[2].textContent + " wins!!!";
+        boxes[2].style.backgroundColor = "pink";
+        boxes[4].style.backgroundColor = "pink";
+        boxes[6].style.backgroundColor = "pink";
     }
 }
 
