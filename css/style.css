@@ -1,3 +1,67 @@
+
 h1 {
-  color: purple;
+  text-align: center;
+
+}
+
+.reset {
+  /* found cool hover thing when
+  the mouse is over the object
+  it shows a finger pointer
+  helps know alert the user 
+  its clickable */
+  cursor: pointer;
+}
+
+.reset:hover{
+  color: rgb(7, 146, 7);
+}
+
+.gameStatus {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100px;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+/* Main grid box used for Game. */
+.containerOne {
+  background: lightblue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
+  height: 200px;
+}
+/* Grids individually 1 through 9
+within <div class="container-One> </div> */
+.gridCellItem {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+  background: white;
+
+}
+
+.X::before {
+  content: 'X';
+  color: rgb(8, 229, 245);
+  align-items: center;
+}
+
+.O::before{
+  content: 'O';
+  color: rgb(219, 17, 94)
+}
+#sectionTwo {
+  
+}
+
+#sectionThree {
+
+}
+hr3 {
+  
 }
