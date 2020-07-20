@@ -22,7 +22,7 @@ body {
 }
 
 .hover1:hover {
-  background-color: lightgray;
+  background-color: rgb(253, 250, 232);
   z-index: 1;
 }
 
