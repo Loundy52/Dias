@@ -14,35 +14,58 @@
 //     }
 // }
 
+// const getXs= document.querySelector(".topRow");
+//     for (let i = 0; i < getXs.children.length; i++) {
+//         console.log(getXs.children[i].tagName);
+// }
+
+
+let win1= document.querySelector(".topRow");
+console.log(win1.length);
 
 
 
-document.querySelector("#leftT").addEventListener("click", onClick1);
-function onClick1() {
-    let checkX= document.querySelector("#X1");
-    let checkO= document.querySelector("#O1");
-    let move1= document.querySelector("#leftT");
-    let xMove= document.createElement("h2");
-    xMove.setAttribute("id", "X1");
-    let xRemove= document.querySelector("#X1");
-    let oMove= document.createElement("h3");
-    oMove.setAttribute("id", "O1");
-    let oRemove= document.querySelector("#O1");
-    if (checkO !== null && checkX === null) {
-        move1.removeChild(oRemove);
-        move1.appendChild(xMove);
-        xMove.textContent= "X";
-    } else if (checkX !== null && checkO === null) {
-        move1.removeChild(xRemove);
-        move1.appendChild(oMove);
-        oMove.textContent= "O";
-    } else if (checkX === null || checkO !== null) {
-        move1.appendChild(xMove);
-        oMove.textContent= "X";
+// let win2= document.querySelector(".midRow");
+// let win3= document.querySelector(".botRow");
+// let win4= document.querySelector(".leftCol");
+// let win5= document.querySelector(".midCol");
+// let win6= document.querySelector(".rightCol");
+// let win7= document.querySelectorAll("#leftT #midM #rightB");
+// let win8= document.querySelectorAll(".leftCol");
+
+// let checkWin= function() {
+    //     if () 
+    // }
+    
+    
+    
+    document.querySelector("#leftT").addEventListener("click", onClick1);
+    function onClick1() {
+        let checkX= document.querySelector("#X1");
+        let checkO= document.querySelector("#O1");
+        let move1= document.querySelector("#leftT");
+        let xMove= document.createElement("h2");
+        xMove.setAttribute("id", "X1");
+        let xRemove= document.querySelector("#X1");
+        let oMove= document.createElement("h3");
+        oMove.setAttribute("id", "O1");
+        let oRemove= document.querySelector("#O1");
+        if (checkO !== null && checkX === null) {
+            move1.removeChild(oRemove);
+            move1.appendChild(xMove);
+            xMove.textContent= "X";
+        } else if (checkX !== null && checkO === null) {
+            move1.removeChild(xRemove);
+            move1.appendChild(oMove);
+            oMove.textContent= "O";
+        } else if (checkX === null || checkO !== null) {
+            move1.appendChild(xMove);
+            oMove.textContent= "X";
+        }
+        console.log(win1.innerHTML);
+        
     }
-
-}
-
+    
 document.querySelector("#midT").addEventListener("click", onClick2);
 function onClick2() {
     let checkX= document.querySelector("#X2");
@@ -66,6 +89,8 @@ function onClick2() {
         move2.appendChild(xMove);
         oMove.textContent= "X";
     }
+    console.log(win1.innerHTML);
+
 }
 
 document.querySelector("#rightT").addEventListener("click", onClick3);
@@ -91,6 +116,8 @@ function onClick3() {
         move3.appendChild(xMove);
         oMove.textContent= "X";
     }
+    console.log(win1.innerHTML);
+
 }
 
 document.querySelector("#leftM").addEventListener("click", onClick4);
