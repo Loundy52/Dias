@@ -1,3 +1,80 @@
+
+body {
+  display: flex;
+  font-family: sans-serif;
+  justify-content: center;
+}
+
+.container {
+  position: absolute;
+  align-content: center;
+
+}
+
 h1 {
   color: purple;
+  
+  font-size: 35px;
+}
+
+.status-action {
+  
+  margin-top: 20px;
+  justify-content: space-around;
+  height: 30px;
+}
+
+.status {
+  font-size: 28px;
+  
+}
+.reset {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.reset:hover {
+  color: royalblue
+}
+
+.grid {
+  background: red;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
+  margin-top: 150px;
+}
+
+.game-cell {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+
+}
+
+.x,
+.o {
+  cursor: default;
+}
+
+.x::after {
+  content: 'x';
+  font-size: 100px;
+  color: grey;
+
+}
+
+.o::after {
+  content: 'o';
+  color: #0e0c07;
+  font-size: 100px;
+}
+
+.won::after {
+  color: #BD022F;
 }
