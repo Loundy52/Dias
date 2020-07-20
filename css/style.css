@@ -1,3 +1,91 @@
-h1 {
+* { /* select all elemnts */
+  box-sizing: border-box; /* allows the positioning values to be relative to the content, and independent of changes to border and padding sizes*/
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: grey;
+  display: flex;
+  font-family: 'Times New Roman', Times, serif;
+  justify-content: center;
+}
+
+.container {
+  background: white;
+  margin: 50px;
+  padding: 50px;
+  
+}
+
+.title {
+  text-align: center;
+}
+
+.status-action {
+  display: flex;
+  margin-top: 25px; /*separate from title*/
+  font-size: 25px;
+  justify-content: space-around; /*space around Turn and Reset button*/
+  height: 30px;
+ 
+}
+
+
+.reset {
+  cursor: pointer;
+  
+  
+   /* let users know they can click it */
+}
+
+.status:hover{
+  color: green;
+}
+
+.reset:hover {
   color: purple;
 }
+
+.board {
+  background: grey;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
+  margin-top: 20px;
+}
+
+.game {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+}
+
+.x,
+.o {
+  cursor: default;
+  font-family: 'Times New Roman', Times, serif;
+  color: darkslategrey;
+}
+
+.x::after {
+  content: '×';
+  font-size: 100px;
+}
+
+.o::after {
+  content: '○';
+  color: blue;
+  font-size: 100px;
+}
+
+.won::after {
+  color: maroon;
+  ;
+}
+
