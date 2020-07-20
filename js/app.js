@@ -1,3 +1,22 @@
+// let checkTurn= document.querySelector("#whoseTurn");
+// let xTurn= document.querySelector("#whoseTurn").createElement("h4");
+//     xTurn.textContent= "X Turn";
+// let oTurn= document.querySelector("#whoseTurn").createElement("h5");
+//     oTurn.textContent= "O Turn";
+
+
+// document.querySelector(".gameBoard").addEventListener("click", turns)
+// let turns= function() {
+//     let clicks= 0;
+//     clicks += 1;
+//     if (clicks === null) {  
+//     } else if (clicks % 2 !== 0) {
+//     }
+// }
+
+
+
+
 document.querySelector("#leftT").addEventListener("click", onClick1);
 function onClick1() {
     let checkX= document.querySelector("#X1");
