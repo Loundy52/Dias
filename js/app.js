@@ -17,7 +17,7 @@ const blockEight = document.getElementById("block8");
 const blockNine = document.getElementById("block9");
 const resetBtn = document.getElementById("btn"); //foreach option?
 
-
+let playersTurn = document.querySelector(".players-turn");
 //is clicked a variable = true;
 //
 
@@ -28,20 +28,21 @@ const player2 = "O";
 
 
 let boxOneClicked = false;
-let checkWinner = 0;
+
 function boxOne(){
     if (boxOneClicked == false){
         if (turnCounter%2 === 0){ //player
             blockOne.textContent = player1; //every other click does something different
-            checkWinner === 1;
+            
         } else {
+            
             blockOne.textContent = player2; //every other click does something different
-            checkWinner == 2;
+            
         }
         turnCounter++;
     } 
     boxOneClicked = true;
-    winningResults();
+    playersTurn.innerHTML = "Player Two Go!"
 }
 
 let boxTwoClicked = false;
@@ -49,15 +50,17 @@ function boxTwo(){
     if (boxTwoClicked == false){
         if (turnCounter%2 === 0){ //player
             blockTwo.textContent = player1; //every other click does something different
-            checkWinner === 1;
+            
         } else {
             blockTwo.textContent = player2; //every other click does something different
         }
         
         turnCounter++;
     }
+
+    
     boxTwoClicked = true;
-    winningResults();
+    
 }
 
 let boxThreeClicked = false;
@@ -65,14 +68,14 @@ function boxThree(){
     if(boxThreeClicked == false){
         if (turnCounter%2 === 0){ //player
             blockThree.textContent = player1; //every other click does something different
-            checkWinner === 1;
+            
         } else {
             blockThree.textContent = player2; //every other click does something different
         }
         turnCounter++;
     }
      boxThreeClicked = true; 
-     winningResults();
+    
 }
 
 
@@ -159,29 +162,23 @@ function resetButton(){
     location.reload();
 }
 
-// let one = document.querySelector("#block1");
-// let two = document.querySelector("#block2");
-// let three = document.querySelector("#block3");
-// let four = document.querySelector("#block4");
-// let five = document.querySelector("#block5");
-// let six = document.querySelector("block6");
-// let seven = document.querySelector("#block7");
-// let eight = document.querySelector("#block8");
-// let nine = document.querySelector("#block9");
+
+function winStatus(){
+    let one = document.querySelector("#block1");
+    let two = document.querySelector("#block2");
+    let three = document.querySelector("#block3");
+    let four = document.querySelector("#block4");
+    let five = document.querySelector("#block5");
+    let six = document.querySelector("block6");
+    let seven = document.querySelector("#block7");
+    let eight = document.querySelector("#block8");
+    let nine = document.querySelector("#block9");
+
+}
 
 // let row1 = blockOne, blockTwo, blockThree;
 // let row2 = blockfour, blockFive, blockSix;
 // let row3 = blockSeven, blockEight, blockNine;
-
-function winningResults (){
-    if (boxOne && boxTwo || boxThree === 1){
-        console.log('winner');
-    }
-}
-
-
-
-
 
 
 
