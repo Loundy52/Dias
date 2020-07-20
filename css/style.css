@@ -53,11 +53,13 @@ td {
 
 button{
   margin: 50px auto;
-  background: purple;
+  background: white;
   color: lightblue;
+
+
 }
-.endContainer{
-  display: none;
+#endField{
+  /* display: none; */
   position: absolute;
   width: 250px;
   top: 150px;
