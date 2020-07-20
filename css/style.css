@@ -1,3 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Rowdies:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+body{
+  background:rgb(128, 220, 189);
+  font-family: 'Open Sans', sans-serif;
+}
+.header{
+  text-align: center;
+  padding: 10px;
+  
+}
+
+
 h1 {
   color: purple;
+  /* display:flex; */
+  font-size: 50px;
+}
+
+h2 {
+  height: 80px;
+}
+
+span {
+  color: Red;
+}
+
+
+.container {
+  display: grid;
+  height: 650px;
+  width: 650px;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  margin: 0 auto;
+  background-color: rgb(128, 220, 189);
+  grid-gap: 15px;
+  padding: 25px;
+  
+  
+}
+
+.boxContainer {
+  font-size: 130px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  background-color: rgb(250, 220, 120);
+  font-family: 'Permanent Marker', cursive;
+
+  
+
+}
+
+
+.button {
+  background-color: red;
+  color: White;
+  font-size: 25px;;
+  height: 40px;
+  width: 200px;
+  text-align: center;
+  margin:0 auto;
 }
