@@ -22,9 +22,6 @@ if(document.querySelector('input[name="choice"]')) {
     }); 
 }
 
-//function to alternate options
-
-
 //if box 1 is clicked
 const firstBox = document.getElementById("box1");
 function chooseBox1(element) {
@@ -175,7 +172,6 @@ let grid = {
    row2: ["4", "5", "6"],
    row3: ["7", "8", "9"]
 };
-
 
 //function to remove click listener when game is finished
 function stopPlay(element) {
