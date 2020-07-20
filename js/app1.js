@@ -2,11 +2,7 @@ let moves = 1;
 let currentMove = '';
 let oClickedSquareIds = [];
 let xClickedSquareIds = [];
-const victoryArray = 
-[[0, 3, 6], [1, 4, 7], [2, 5, 8], // left to right
-[0, 1, 2], [3, 4, 5], [6, 7, 8],  // up and down
-[0, 4, 8], [2, 4, 6]] // diagonal 
-// to match clickedSquareIds array, must run array.sort()
+
 
 let gameMessage = document.querySelector('h2');
 let squareIdArray = document.querySelectorAll('div.square');
@@ -14,11 +10,14 @@ let gameOver = null;
 
 // main eventListener
 document.addEventListener('DOMContentLoaded', function() {
+    squareListeners();
+    
     squareIdArray.forEach(function(element) {
         element.addEventListener('click', function() {
             console.log(element);
             element.classList.add('clicked');
             element.textContent = whoseMoveIsIt(element);
+            checkForVictory();
         });
     });
     
@@ -42,21 +41,7 @@ function whoseMoveIsIt(element) {
         element.textContent = 'o'; 
         currentMove = 'o';
         gameMessage.textContent = 'It\'s X\'s Turn';
-        oClickedSquareIds.push(parseInt(element.id)); // convert id # to int
-        let oSortArray = oClickedSquareIds.sort(); // sort array from lowest to highest num
-        for (let i = 0; i < oSortArray.length; i++){
-            console.log(oSortArray[i]);
-            
-            for (let j = 0; j < victoryArray.length; j++) {
-                
-                if (oSortArray == victoryArray[j]) {
-                    console.log('victory!!!')
-                
-                } else {
-                    console.log('no winner yet!')
-                }
-            }
-        }
+
         console.log(element.id);
         console.log(oClickedSquareIds);
         
@@ -93,6 +78,145 @@ function whoseMoveIsIt(element) {
 };
 
 
-function checkWinner() {
-    let gameOver = false;
+// function checkWinner() {
+//     let gameOver = false;
+// }
+
+
+//DECOMPOSE
+// track user move spaces
+// check user move spaces against winning combos
+
+// function logMove(e){
+// 	console.log(e);
+// }
+// squareIdArray.forEach(function(element) {
+//     element.addEventListener('click', function() {
+//         console.log(element);
+//         element.classList.add('clicked');
+//         element.textContent = whoseMoveIsIt(element);
+//     }
+
+function logMove(){
+    click0 = true;
+
+    checkForVictory();
 }
+
+let click0 = false;
+let click1 = false;
+let click2 = false;
+let click3 = false;
+let click4 = false;
+let click5 = false;
+let click6 = false;
+let click7 = false;
+let click8 = false;
+
+const getSquare0 = document.getElementById('0');
+const getSquare1 = document.getElementById('1');
+const getSquare2 = document.getElementById('2');
+const getSquare3 = document.getElementById('3');
+const getSquare4 = document.getElementById('4');
+const getSquare5 = document.getElementById('5');
+const getSquare6 = document.getElementById('6');
+const getSquare7 = document.getElementById('7');
+const getSquare8 = document.getElementById('8');
+
+
+
+function squareListeners() {
+    getSquare0.addEventListener('click', function() {
+        click0 = true;
+        console.log(click0);
+    });
+    getSquare1.addEventListener('click', function() {
+        click1 = true;
+        console.log(click1);
+    });
+    getSquare2.addEventListener('click', function() {
+        click2 = true;
+        console.log(click2);
+    });
+    getSquare3.addEventListener('click', function() {
+        click3 = true;
+        console.log(click3);
+    });
+    getSquare4.addEventListener('click', function() {
+        click4 = true;
+        console.log(click4);
+    });
+    getSquare5.addEventListener('click', function() {
+        click5 = true;
+        console.log(click5);
+    });
+    getSquare6.addEventListener('click', function() {
+        click6 = true;
+        console.log(click6);
+    });
+    getSquare7.addEventListener('click', function() {
+        click7 = true;
+        console.log(click7);
+    });
+    getSquare8.addEventListener('click', function() {
+        click8 = true;
+        console.log(click8);
+    });
+};
+
+function printWinner () {
+    console.log('victory!')
+            if (currentMove === 'o') {
+                gameMessage.textContent = 'O Wins!';
+            } else {
+                gameMessage.textContent = 'X Wins!';
+        }
+    };
+
+// I am ashamed of myself for this one.
+// surely there is a better way to write this. 
+
+function checkForVictory () {
+
+    if (click0 === true && click1 === true && click2 === true) {
+        printWinner()
+    
+    } else if (click3 === true && click4 === true && click5 === true) {
+        console.log('victory!')
+    
+    } else if (click6 === true && click7 === true && click8 === true) {
+        console.log('victory!')
+    
+    } else if (click0 === true && click3 === true && click6 === true) {
+        console.log('victory!')
+    
+    } else if (click1 === true && click4 === true && click7 === true) {
+        console.log('victory!')
+    
+    } else if (click2 === true && click5 === true && click8 === true) {
+        console.log('victory!')
+    
+    } else if (click0 === true && click4 === true && click8 === true) {
+        console.log('victory!')
+    
+    } else if (click2 === true && click4 === true && click6 === true) {
+        console.log('victory!')
+    
+    }
+};
+
+
+
+// for (let i = 0; i < oSortArray.length; i++){
+//     console.log(oSortArray[i]);
+    
+//     for (let j = 0; j < victoryArray.length; j++) {
+        
+//         if (oSortArray == victoryArray[j]) {
+//             console.log('victory!!!')
+        
+//         } else {
+//             console.log('no winner yet!')
+//         }
+//     }
+// }
