@@ -15,9 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             element.textContent = whoseMoveIsIt(element);
             console.log(moves);
             console.log(gameOver);
-            if (gameOver === true) {
-                setTimeout(gameOverMan(element), 1000);
-            } 
+            
             
         });
         
@@ -26,12 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-function gameOverMan (element) {
-    moves = 1;
-    gameOver = false;
-    console.log('it worked');
-    confirm('play again?');
-};
+// function gameOverMan () {
+//     moves = 1;
+//     gameOver = false;
+//     console.log('it worked');
+//     confirm('play again?');
+// };
 
 // most of the logic happens here 
 // all of this occurs on a click
@@ -66,6 +64,13 @@ function whoseMoveIsIt(element) {
         currentMove = 'o';
         gameMessage.textContent = 'Make a move!'; 
         gameOver = true;
+
+    if (gameOver === true) {
+        moves = 1;
+        gameOver = false;
+        // setTimeout allows the css to update prior to the alert!
+        window.setTimeout(window.confirm, 100, 'Play Again?');
+        } 
         // moves = 1;
         // gameOver = true ties to potential play again logic. 
         // if that logic placed in this scope, last result will not update prior to alert.
