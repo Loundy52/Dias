@@ -124,6 +124,19 @@ function endGame()
     }
 }
 
+function reset()
+{
+    let message = document.querySelector("p");
+    message.textContent = "X goes first!";
+
+    boxes.forEach(box =>
+    {
+        box.textContent = "";
+        box.classList.remove("player-X");
+        box.classList.remove("player-O");
+        box.style.backgroundColor = "none";
+    });
+}
 
 
 document.addEventListener('DOMContentLoaded', function()
@@ -151,4 +164,6 @@ document.addEventListener('DOMContentLoaded', function()
             }
         });
     });
+
+
 });
