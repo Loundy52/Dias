@@ -3,10 +3,17 @@ h1
   color: purple;
 }
 
+p
+{
+  display: flex;
+  justify-content: center;
+  color: orange;
+}
+
 .grid
 {
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
 }
 
@@ -18,10 +25,15 @@ ul
 
 li
 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid black;
   border-style: none none solid none;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 27px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .col2 li
