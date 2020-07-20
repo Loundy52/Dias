@@ -13,23 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
         element.addEventListener('click', function() {
             console.log(element);
             element.textContent = whoseMoveIsIt(element);
-            console.log(moves);
-            console.log(gameOver);
-            
-            
+            console.log(moves); 
+            // squareListeners();
         });
         
     });  
     
 });
-
-
-// function gameOverMan () {
-//     moves = 1;
-//     gameOver = false;
-//     console.log('it worked');
-//     confirm('play again?');
-// };
 
 // most of the logic happens here 
 // all of this occurs on a click
@@ -47,6 +37,8 @@ function whoseMoveIsIt(element) {
         element.classList.add('playerO'); 
         gameMessage.textContent = 'It\'s X\'s Turn'; 
         console.log(element.id);
+        // checkForVictory();
+
         
     } else {
 
@@ -54,6 +46,8 @@ function whoseMoveIsIt(element) {
         element.classList.add('playerX') // append player name to class list
         gameMessage.textContent = 'It\'s O\'s Turn';
         console.log(element.id);
+        // checkForVictory();
+
     }
 
     // reset move counter and gameMessage after 9 iterations
@@ -68,6 +62,7 @@ function whoseMoveIsIt(element) {
     if (gameOver === true) {
         moves = 1;
         gameOver = false;
+        // window.confirm( 100, 'Play Again?');
         // setTimeout allows the css to update prior to the alert!
         window.setTimeout(window.confirm, 100, 'Play Again?');
         } 
@@ -222,6 +217,15 @@ function whoseMoveIsIt(element) {
 
 
 
+// let click0 = false;
+// let click1 = false;
+// let click2 = false;
+// let click3 = false;
+// let click4 = false;
+// let click5 = false;
+// let click6 = false;
+// let click7 = false;
+// let click8 = false;
 
 // function squareListeners() {
 //     getSquare0.addEventListener('click', function() {
@@ -274,8 +278,9 @@ function whoseMoveIsIt(element) {
 //         }
 //     };
 
-// I am ashamed of myself for this one.
-// surely there is a better way to write this. 
+// // I am ashamed of myself for this one.
+// // surely there is a better way to write this. 
+
 
 // function checkForVictory () {
 
@@ -289,19 +294,18 @@ function whoseMoveIsIt(element) {
 //         (click2 === true && click4 === true && click6 === true)) {
 //             printWinner();
 //         }
+//     };
     
-    
-// };
 
 // this logic must be applied to each combination of
 //for 
-// function whoWonTheGame (element)
+// function whoWonTheGame (element){
 
-    // if (element.classList.contains('playerX')) {
-        // console.log('x wins!');
-    //} else if (element.classList.contains('playerO')) {
-        // console.log('o wins!');
-    //}
+//     if (element.classList.contains('playerX')) {
+//         console.log('x wins!');
+//     } else if (element.classList.contains('playerO')) {
+//         console.log('o wins!');
+//     }
 
 // function checkPlayerClass (player) {
 //     if ((click0 === true && click1 === true && click2 === true) || 
