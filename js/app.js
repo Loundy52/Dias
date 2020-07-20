@@ -17,7 +17,7 @@ const blockEight = document.getElementById("block8");
 const blockNine = document.getElementById("block9");
 const resetBtn = document.getElementById("btn"); //foreach option?
 
-let playersTurn = document.querySelector(".players-turn");
+
 //is clicked a variable = true;
 //
 
@@ -33,16 +33,15 @@ function boxOne(){
     if (boxOneClicked == false){
         if (turnCounter%2 === 0){ //player
             blockOne.textContent = player1; //every other click does something different
-            
+            winStatus();
         } else {
             
             blockOne.textContent = player2; //every other click does something different
-            
         }
         turnCounter++;
     } 
     boxOneClicked = true;
-    playersTurn.innerHTML = "Player Two Go!"
+    
 }
 
 let boxTwoClicked = false;
@@ -50,11 +49,9 @@ function boxTwo(){
     if (boxTwoClicked == false){
         if (turnCounter%2 === 0){ //player
             blockTwo.textContent = player1; //every other click does something different
-            
         } else {
             blockTwo.textContent = player2; //every other click does something different
         }
-        
         turnCounter++;
     }
 
@@ -162,21 +159,35 @@ function resetButton(){
     location.reload();
 }
 
+// attempt at creating a win solution
+// function winStatus(){
+//     // let one = document.getElementById("block1");
+//     // let two = document.getElementById("block2");
+//     // let three = document.getElementById("block3");
+//     // let four = document.getElementById("#block4");
+//     // let five = document.getElementById("#block5");
+//     // let six = document.querySelector("block6");
+//     // let seven = document.querySelector("#block7");
+//     // let eight = document.querySelector("#block8");
+//     // let nine = document.querySelector("#block9");
 
-function winStatus(){
-    let one = document.querySelector("#block1");
-    let two = document.querySelector("#block2");
-    let three = document.querySelector("#block3");
-    let four = document.querySelector("#block4");
-    let five = document.querySelector("#block5");
-    let six = document.querySelector("block6");
-    let seven = document.querySelector("#block7");
-    let eight = document.querySelector("#block8");
-    let nine = document.querySelector("#block9");
+//     // let row1 = [one, two, three];
+//     // let row2 = [four, five, six];
+//     // let row3 = [seven, eight, nine];
 
-}
+//     // if (row1 == row2 && row3){
+//     //     alert('Player One Won!');
+//     // }
 
-// let row1 = blockOne, blockTwo, blockThree;
+
+
+//     if( winner === 'X' || winner === 'O'){
+//         console.log ('PLAYER ONE WON')
+//     }
+
+// }
+
+
 // let row2 = blockfour, blockFive, blockSix;
 // let row3 = blockSeven, blockEight, blockNine;
 
