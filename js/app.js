@@ -135,6 +135,15 @@ document.addEventListener('DOMContentLoaded', function()
             if (box.textContent !== "X" && box.textContent !== "O" && box.textContent !== " ")
             {
                 box.textContent = whatMove();
+                if (box.textContent === "X")
+                {
+                    box.classList.add("player-X");
+                }
+                else
+                {
+                    box.classList.add("player-O");
+                }
+                console.log(box.classList);
                 moveCount++;
                 whoMove();
                 checkWins();
