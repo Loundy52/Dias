@@ -113,6 +113,9 @@ let click6 = false;
 let click7 = false;
 let click8 = false;
 
+let playerClickedSquares = 
+[]
+
 const getSquare0 = document.getElementById('0');
 const getSquare1 = document.getElementById('1');
 const getSquare2 = document.getElementById('2');
@@ -122,6 +125,7 @@ const getSquare5 = document.getElementById('5');
 const getSquare6 = document.getElementById('6');
 const getSquare7 = document.getElementById('7');
 const getSquare8 = document.getElementById('8');
+
 
 
 
@@ -178,31 +182,18 @@ function printWinner () {
 
 function checkForVictory () {
 
-    if (click0 === true && click1 === true && click2 === true) {
-        printWinner()
+    if ((click0 === true && click1 === true && click2 === true) || 
+        (click3 === true && click4 === true && click5 === true) ||
+        (click6 === true && click7 === true && click8 === true) ||
+        (click0 === true && click3 === true && click6 === true) ||
+        (click1 === true && click4 === true && click7 === true) ||
+        (click2 === true && click5 === true && click8 === true) ||
+        (click0 === true && click4 === true && click8 === true) ||
+        (click2 === true && click4 === true && click6 === true)) {
+            printWinner();
+        }
     
-    } else if (click3 === true && click4 === true && click5 === true) {
-        console.log('victory!')
     
-    } else if (click6 === true && click7 === true && click8 === true) {
-        console.log('victory!')
-    
-    } else if (click0 === true && click3 === true && click6 === true) {
-        console.log('victory!')
-    
-    } else if (click1 === true && click4 === true && click7 === true) {
-        console.log('victory!')
-    
-    } else if (click2 === true && click5 === true && click8 === true) {
-        console.log('victory!')
-    
-    } else if (click0 === true && click4 === true && click8 === true) {
-        console.log('victory!')
-    
-    } else if (click2 === true && click4 === true && click6 === true) {
-        console.log('victory!')
-    
-    }
 };
 
 
