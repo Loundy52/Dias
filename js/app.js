@@ -28,6 +28,7 @@ boxOne.addEventListener('click', function(){
     checkTurn = 0;
     displayTurn.innerText = "Player Two's Turn";
   }
+  winCondition();
 });
 boxTwo.addEventListener('click', function () {
   if (checkTurn == 0) {
@@ -39,6 +40,7 @@ boxTwo.addEventListener('click', function () {
     boxTwo.classList.add('player-one');
     checkTurn = 0;
   }
+  winCondition();
 });
 boxThree.addEventListener('click', function () {
   if (checkTurn == 0) {
@@ -50,6 +52,7 @@ boxThree.addEventListener('click', function () {
     boxThree.classList.add('player-one');
     checkTurn = 0;
   }
+  winCondition();
 });
 boxFour.addEventListener('click', function () {
   if (checkTurn == 0) {
@@ -61,6 +64,7 @@ boxFour.addEventListener('click', function () {
     boxFour.classList.add('player-one');
     checkTurn = 0;
   }
+  winCondition();
 });
 boxFive.addEventListener('click', function () {
   if (checkTurn == 0) {
@@ -72,6 +76,7 @@ boxFive.addEventListener('click', function () {
     boxFive.classList.add('player-one');
     checkTurn = 0;
   }
+  winCondition();
 });
 boxSix.addEventListener('click', function () {
   if (checkTurn == 0) {
@@ -83,6 +88,7 @@ boxSix.addEventListener('click', function () {
     boxSix.classList.add('player-one');
     checkTurn = 0;
   }
+  winCondition();
 });
 boxSeven.addEventListener('click', function () {
   if (checkTurn == 0) {
@@ -94,6 +100,7 @@ boxSeven.addEventListener('click', function () {
     boxSeven.classList.add('player-one');
     checkTurn = 0;
   }
+  winCondition();
 });
 boxEight.addEventListener('click', function () {
   if (checkTurn == 0) {
@@ -105,6 +112,7 @@ boxEight.addEventListener('click', function () {
     boxEight.classList.add('player-one');
     checkTurn = 0;
   }
+  winCondition();
 });
 boxNine.addEventListener('click', function () {
   if (checkTurn == 0) {
@@ -116,4 +124,68 @@ boxNine.addEventListener('click', function () {
     boxNine.classList.add('player-one');
     checkTurn = 0;
   }
+  winCondition();
 });
+
+
+function winCondition() {
+  let topLeft = document.querySelector('#up-left').className;
+  let topMid = document.querySelector('#up-mid').className;
+  let topRight = document.querySelector('#up-right').className;
+  let midLeft = document.querySelector('#mid-left').className;
+  let midMid = document.querySelector('#mid-mid').className;
+  let midRight = document.querySelector('#mid-right').className;
+  let bottomLeft = document.querySelector('#low-left').className;
+  let bottomMid = document.querySelector('#low-mid').className;
+  let bottomRight = document.querySelector('#low-right').className;
+
+  if(topLeft === topMid && topLeft === topRight && topRight != "box") {
+    if (checkTurn === 0) {
+      displayTurn.innerText = "Player One Won!";
+    } else {
+      displayTurn.innerText = "Player Two Won!";
+    }
+  } else if (midLeft === midMid && midLeft === midRight && midRight != "box") {
+    if (checkTurn === 0) {
+      displayTurn.innerText = "Player One Won!";
+    } else {
+      displayTurn.innerText = "Player Two Won!";
+    }
+  } else if (bottomLeft === bottomMid && bottomLeft === bottomRight && bottomRight != "box") {
+    if (checkTurn === 0) {
+      displayTurn.innerText = "Player One Won!";
+    } else {
+      displayTurn.innerText = "Player Two Won!";
+    }
+  } else if (topLeft === midLeft && midLeft === bottomLeft && bottomLeft != "box") {
+    if (checkTurn === 0) {
+      displayTurn.innerText = "Player One Won!";
+    } else {
+      displayTurn.innerText = "Player Two Won!";
+    }
+  } else if (topMid === midMid && midMid === bottomMid && bottomMid != "box") {
+    if (checkTurn === 0) {
+      displayTurn.innerText = "Player One Won!";
+    } else {
+      displayTurn.innerText = "Player Two Won!";
+    }
+  } else if (topRight === midRight && midRight === bottomRight && bottomRight != "box") {
+    if (checkTurn === 0) {
+      displayTurn.innerText = "Player One Won!";
+    } else {
+      displayTurn.innerText = "Player Two Won!";
+    }
+  } else if (topLeft === midMid && midMid === bottomRight && midMid != "box") {
+    if (checkTurn === 0) {
+      displayTurn.innerText = "Player One Won!";
+    } else {
+      displayTurn.innerText = "Player Two Won!";
+    }
+  } else if (topRight === midMid && midMid === bottomLeft && topRight != "box") {
+    if (checkTurn === 0) {
+      displayTurn.innerText = "Player One Won!";
+    } else {
+      displayTurn.innerText = "Player Two Won!";
+  }
+}
+}
