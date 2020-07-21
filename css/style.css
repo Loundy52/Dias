@@ -25,13 +25,15 @@ h1 {
   font-family: sans-serif;
 }
 /* Main grid box used for Game. */
-.containerOne {
+.gameBoard {
   background: lightblue;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 5px;
-  height: 200px;
+  margin: auto;
+  width: 310px;
+  /* height: 200px; */
 }
 /* Grids individually 1 through 9
 within <div class="container-One> </div> */
@@ -41,7 +43,9 @@ within <div class="container-One> </div> */
   align-items: center;
   font-size: 30px;
   cursor: pointer;
-  background: white;
+  background: blue;
+  height: 100px;
+  width: 100px;
 
 }
 

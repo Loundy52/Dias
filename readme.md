@@ -47,3 +47,23 @@ We will be making a Tic Tac Toe game using all of these concepts.
 ## Licensing
 1. All content is licensed under a CC-BY-NC-SA 4.0 license.
 2. All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
+
+# h1
+## h2List
+### h3 Technologies tha i used
+1. Html
+2. JavaScript
+3. CSS
+
+CMD + SHIFT + V
+
+## Code snippet
+``` JavaSCiript
+ copy the code you want to showcase
+
+ const div = document.createElement ('div')
+  div.classList.add('713')
+  div.textContent = 'The 713'
+```
+This code snippet shows me creating an element and giving it a class name and 
+sytnex
