@@ -11,7 +11,7 @@ const oSymbol = 'o';
 let gameIsLive = true;
 let xIsNext = true;
 
-//function
+//function 
 const letterToSymbol = (letter) => letter === 'x' ? xSymbol : oSymbol;
 
 const handleWin = (letter) => {
@@ -125,3 +125,13 @@ resetDiv.addEventListener('click', handleReset);
 for (const cellDiv of cellDivs) {
     cellDiv.addEventListener('click', handleCellClick)
 }
+
+
+//AI computer function
+// function ComputerPlayer(board) {
+//     this.takeTurn = function() {
+//       let availablePositions = board.positions.filter((p) => p.innerText === '');
+//       const move = Math.floor(Math.random() * (availablePositions.length - 0));
+//       availablePositions[move].innerText = 'O';
+//     }
+//   }
