@@ -49,21 +49,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //result 
         if (cellOne === cellTwo && cellTwo === cellThree && cellThree !== 'cell'){
-            resultM ("You won!") 
+            resultM ("You won! " + currentPlayer) 
         }else if (cellFour === cellFive && cellFive === cellSix && cellSix !== 'cell'){
-            resultM ("You won!")
+            resultM ("You won! " + currentPlayer)
         }else if (cellSeven === cellEight && cellEight === cellNine && cellNine !== 'cell'){
-            resultM ("You won!")
+            resultM ("You won! " + currentPlayer)
         }else if (cellOne === cellFour&& cellFour === cellSeven && cellSeven !== 'cell'){
-            resultM ("You won!")
+            resultM ("You won! " + currentPlayer)
         }else if (cellTwo === cellFive && cellFive === cellEight && cellEight !== 'cell'){
-            resultM ("You won!")
+            resultM ("You won! " + currentPlayer)
         }else if (cellThree === cellSix && cellSix === cellNine && cellNine !== 'cell'){
-            resultM ("You won!")
+            resultM ("You won! " + currentPlayer)
         }else if (cellOne === cellFive && cellFive === cellNine && cellNine !== 'cell'){
-            resultM ("You won!")
+            resultM ("You won! " + currentPlayer)
         }else if (cellThree === cellFive && cellFive === cellSeven && cellSeven !== 'cell'){
-            resultM ("You won!")
+            resultM ("You won! " + currentPlayer)
         }else if (cellOne != 'cell' && cellTwo != 'cell' && cellThree != 'cell' && cellFive != 'cell' && cellSix != 'cell' && cellSeven != 'cell' && cellEight != 'cell' && cellNine != 'cell')
             resultM ("It's a tie! play again!") 
       
