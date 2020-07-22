@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function clickOutcome(e) {
         const squareArray = Array.from(squares)
         const index = squareArray.indexOf(e.target)
-        playerDisplay.textContent = "your turn, " + currentPlayer
+        playerDisplay.textContent = "Your turn, " + currentPlayer
         
 
         if(currentPlayer === 'Player X'){
@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
             resultM ("You won!")
         }else if (cellThree === cellFive && cellFive === cellSeven && cellSeven !== 'cell'){
             resultM ("You won!")
-        }
+        }else if (cellOne != 'cell' && cellTwo != 'cell' && cellThree != 'cell' && cellFive != 'cell' && cellSix != 'cell' && cellSeven != 'cell' && cellEight != 'cell' && cellNine != 'cell')
+            resultM ("It's a tie! play again!") 
       
 
             function resultM(result){
