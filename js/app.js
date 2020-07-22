@@ -29,8 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPlayer = 'Player X'
             squares[index].classList.add('playerX')
         }
-        //const playerX = document.querySelector('.playerX')
-        //const playerO = document.querySelector('.playerO')
+    function clickOnce(square) {
+        square.target.removeEventlistener('clikc', clickOnece)
+    }
+        
+      
        
         let cellOne = document.querySelector('#one').className;
         let cellTwo = document.querySelector('#two').className;
@@ -68,9 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 let resultText = document.createElement('p');
                 resultText.innerText = result;
                 document.body.appendChild(resultText);
-             }    
-         }
-     }    
+            }    
+    }     
+}    
 )
 
 
