@@ -1,7 +1,4 @@
-let moves = 1;
-let gameMessage = document.querySelector('h2');
-let squareIdArray = document.querySelectorAll('div.square');
-let gameOver = false;
+
 
 
 // main eventListener
