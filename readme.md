@@ -8,7 +8,6 @@
 * Use best practices when writing code
 
 This week we have been learning about HTML/CSS, Javascript and DOM manipulations, and writing functions.
-
 We will be making a Tic Tac Toe game using all of these concepts.
 
 ## Getting Started
