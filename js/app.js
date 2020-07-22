@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 //function to switch player
 let displayTurn = document.querySelector(".alert");
-checkTurn = 1;
+checkTurn = 0;
 
 square1.addEventListener("click", function() {
     //alternating between different turns
@@ -32,7 +32,7 @@ square1.addEventListener("click", function() {
         square1.classList.add("player1");
         checkTurn = 0;
         displayTurn.innerText = "Player2, you're up!"
-    } 
+    }   
 });
 
 square2.addEventListener("click", function () {
@@ -46,7 +46,7 @@ square2.addEventListener("click", function () {
         square2.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    } 
+    }   checkWin1()
     
 });
 
@@ -76,7 +76,7 @@ square4.addEventListener("click", function () {
         square3.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    } 
+    }   checkWin1()
     
 });
 
@@ -136,7 +136,7 @@ square8.addEventListener("click", function () {
         square8.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    } 
+    } checkWin1()
    
 });
 
@@ -160,42 +160,53 @@ square9.addEventListener("click", function () {
 let announceWinner = document.querySelector(".announceWinner");
 
 function checkWin1() {
-    let one = document.querySelector("#square1").className;
-    let two = document.querySelector("#square2").className;
-    let three = document.querySelector("#square3").className;
-    let four = document.querySelector("#square4").className;
-    let five = document.querySelector("#square5").className;
-    let six = document.querySelector("#square6").className;
-    let seven = document.querySelector("#square7").className;
-    let eight = document.querySelector("#square8").className;
-    let nine = document.querySelector("#square9").className;
+    //console.log("checkWin1");
+    let one = document.querySelector("#square1").textContent;
+    let two = document.querySelector("#square2").textContent;
+    let three = document.querySelector("#square3").textContent;
+    let four = document.querySelector("#square4").textContent;
+    let five = document.querySelector("#square5").textContent;
+    let six = document.querySelector("#square6").textContent;
+    let seven = document.querySelector("#square7").textContent;
+    let eight = document.querySelector("#square8").textContent;
+    let nine = document.querySelector("#square9").textContent;
     let announceWinner = document.querySelector(".announceWinner");
 
 
-    //trying to refactor code to assign winning conditions
-    let row1 = [one, two, three];
+    if (one === player1 && two === player1 && three === player1) {
+        console.log("player 1 wins");
+        announceWinner.innerText = "Player1 is the winner!";
+    } else if (four === player1 && five === player1 && six === player1){
+        console.log("player 1 win");
+        announceWinner.innerText = "Player1 is the winner!";
+    } else if (seven === player1 && eight === player1 && nine === player1){
+        console.log("player 1 win");
+        announceWinner.innerText = "Player1 is the winner!"; }
 
 
-    if (row1 === true) {
-        if (checkTurn === 0) {
-            announceWinner.innerText = "Player1 is the winner!";
-        } else {
-            announceWinner.innerText = "Player2 is the winner!";
+
+
+    
+
+
+
+//         } else {
+//             announceWinner.innerText = "Player2 is the winner!";
+//         }
+//     } else if (four === player1 && five === player1 && four === player1) {
+//         if (checkTurn === 0) {
+//             announceWinner.innerText = "Player1 is the winner!";
+//         } else {
+//             announceWinner.innerText = "Player2 is the winner!";
+//         } 
+//     } else if (seven === eight && eight === nine && seven === nine) {
+//         if (checkTurn === 0) {
+//             announceWinner.innerText = "Player1 is the winner!";
+//         } else {
+//             announceWinner.innerText = "Player2 is the winner!";
+//         }
         }
-    } else if (four === player1 && five === player1 && four === player1) {
-        if (checkTurn === 0) {
-            announceWinner.innerText = "Player1 is the winner!";
-        } else {
-            announceWinner.innerText = "Player2 is the winner!";
-        } 
-    } else if (seven === eight && eight === nine && seven === nine) {
-        if (checkTurn === 0) {
-            announceWinner.innerText = "Player1 is the winner!";
-        } else {
-            announceWinner.innerText = "Player2 is the winner!";
-        }
-    }
-}
+// }
 
 function clearAllSquares() {
     document.querySelector("#square1").textContent = " ";
