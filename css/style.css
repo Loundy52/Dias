@@ -21,6 +21,7 @@ td {
   border: 6px solid darkblue;
   font-size: 50px;
   cursor:pointer;
+  color: white;
 }
 #td-one{
   border-top: transparent;
@@ -51,15 +52,9 @@ td {
   border-right: transparent;
 }
 
-button{
-  margin: 50px auto;
-  background: white;
-  color: lightblue;
-
-
-}
 #endField{
-  /* display: none; */
+  display: none;
+  /* visibility: hidden; */
   position: absolute;
   width: 250px;
   top: 150px;
@@ -69,15 +64,7 @@ button{
   padding: 50px;
   text-align: center;
   border: 5px solid purple;
-  color: 
+  color: white;
 
 }
 
-/* .x {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 50px;
-}
-.o {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 50px;
-} */
