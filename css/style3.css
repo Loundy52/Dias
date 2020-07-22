@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+#container {
+    width: 320px; /* setting a larger width/height messes up quadrant layout in this style */
+    height: 320px;
+    margin: auto;
+    margin-top: 100px; /* some space between top of board and window */
+    font-family: 'Permanent Marker', cursive;
+
+}
+
+#container h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.q {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    cursor: pointer; /*creates the clicky finger to indicate interactivity*/
+    font-size: 90px;
+}
+
+/* :hover means whatever is between these brackets will 
+apply to .q element when the mouse hovers over it*/
+.q:hover {
+    background-color: lightseagreen;
+}
+
+#q0, #q1, #q2, #q3, #q4, #q5 { /* top two rows */
+    border-bottom: 10px solid black;
+}
+
+#q2, #q5, #q8, #q1, #q4, #q7 {
+    border-left: 10px solid black;
+}
+
+.winner {
+    color: red;
+}
