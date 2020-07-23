@@ -31,8 +31,12 @@ setup()
 
 reset.addEventListener('click', clickReset);
 const result = document.querySelector(".score-board")
+
+
 let playerTurn = 1//fist players turn
 function clickReset() {
+ playerTurn = 0;
+ updateTurn();
  let allBlocks = document.querySelectorAll('.row div ')//reset page
     for(i = 0; i< allBlocks.length; i++){//choose all item
       allBlocks[i].className = ''
@@ -74,6 +78,7 @@ function hasWon(symbol){
 }
 
 
+
 //   function clickblock(block){
 //   if(playerTurn % 2 == 0){
 //     block.setAttribute('class', 'playero');
@@ -94,7 +99,7 @@ function clickblock_1(){
 
   }
   else{block_1.setAttribute('class', "playerx");}
-  playerTurn++;
+  updateTurn();
   let result = whosWinner()
     if (result ){
        hasWon(result)
@@ -108,7 +113,7 @@ function clickblock_2(){
   
     }
     else{block_2.setAttribute('class', "playerx");}
-    playerTurn++;
+    updateTurn();
     let result = whosWinner()
     if (result ){
        hasWon(result)
@@ -124,7 +129,7 @@ function clickblock_3(){
   
     }
     else{block_3.setAttribute('class', "playerx");}
-    playerTurn++;
+    updateTurn();
     let result = whosWinner()
     if (result ){
        hasWon(result)
@@ -138,7 +143,7 @@ function clickblock_4(){
   
     }
     else{block_4.setAttribute('class', "playerx");}
-    playerTurn++;
+    updateTurn()
     let result = whosWinner()
     if (result ){
        hasWon(result)
@@ -152,7 +157,7 @@ function clickblock_5(){
   
     }
     else{block_5.setAttribute('class', "playerx");}
-    playerTurn++;
+    updateTurn();
     let result = whosWinner()
     if (result ){
        hasWon(result)
@@ -166,7 +171,7 @@ function clickblock_6(){
   
     }
     else{block_6.setAttribute('class', "playerx");}
-    playerTurn++;
+    updateTurn();
     let result = whosWinner()
     if (result ){
        hasWon(result)
@@ -180,7 +185,7 @@ function clickblock_7(){
   
     }
     else{block_7.setAttribute('class', "playerx");}
-    playerTurn++;
+    updateTurn();
     let result = whosWinner()
     if (result ){
        hasWon(result)
@@ -194,7 +199,7 @@ function clickblock_8(){
   
     }
     else{block_8.setAttribute('class', "playerx");}
-    playerTurn++;
+    updateTurn();
     let result = whosWinner()
     if (result ){
        hasWon(result)
@@ -208,7 +213,7 @@ function clickblock_9(){
   
     }
     else{block_9.setAttribute('class', "playerx");}
-    playerTurn++;
+    updateTurn()
     let result = whosWinner()
     if (result ){
        hasWon(result)
@@ -216,7 +221,17 @@ function clickblock_9(){
     block_9.removeEventListener("click", clickblock_9);
   
 }
+function updateTurn(){
+  playerTurn++;
+  if (playerTurn % 2 == 0){
+    document.querySelector('.turn').innerText = "Player O's Turn";
+  }else{
+    document.querySelector('.turn').innerText = "Player X's Turn";
+  }
 
+
+
+}
 
 
 function whosWinner(){
@@ -255,7 +270,16 @@ function whosWinner(){
      
    }
   }
-
+  // function turn(){ 
+  //   if (playerTurn % 2 == 0){
+  //   block_1.textContent('Player O Turn');
+  
+  //   }
+  //   else{textContent('Player X Turn')}
+    
+  //   let result =()
+  //     if (result ){
+  //      console.log(result)
    
   
 
