@@ -384,14 +384,13 @@
 // }
 
 
-// var currentPlayer = true;
-let playerTurn = 1;
+let playerTurn = 0;
 
-var winner = document.getElementById("text");
-
+var winner = document.getElementById("text");// function showEndField
 
 
-// endFieldButton.addEventListener('click', );
+
+
 
 var b1 = document.getElementById("td-one");
 var b2 = document.getElementById("td-two");
@@ -415,6 +414,8 @@ function listener(){
     b9.addEventListener('click', clickBox9);
 }
 listener();
+
+
 // console.log(listener);
 
 function clickBox1(){
@@ -430,6 +431,7 @@ function clickBox1(){
     b1.removeEventListener("click", clickBox1);
 
     lastCheck();
+    playerMessage();
 }
 function clickBox2(){
     if (playerTurn % 2 === 0){
@@ -444,6 +446,7 @@ function clickBox2(){
     b2.removeEventListener("click", clickBox2);
 
     lastCheck();
+    playerMessage();
 }
 function clickBox3(){
     if (playerTurn % 2 === 0){
@@ -458,6 +461,7 @@ function clickBox3(){
     b3.removeEventListener("click", clickBox3);
 
     lastCheck();
+    playerMessage();
 }
 function clickBox4(){
     if (playerTurn % 2 === 0){
@@ -472,6 +476,7 @@ function clickBox4(){
     b4.removeEventListener("click", clickBox4);
 
     lastCheck();
+    playerMessage();
 }
 function clickBox5(){
     if (playerTurn % 2 === 0){
@@ -486,6 +491,7 @@ function clickBox5(){
     b5.removeEventListener("click", clickBox5);
 
     lastCheck();
+    playerMessage();
 }
 function clickBox6(){
     if (playerTurn % 2 === 0){
@@ -500,6 +506,7 @@ function clickBox6(){
     b6.removeEventListener("click", clickBox6);
 
     lastCheck();
+    playerMessage();
 }
 function clickBox7(){
     if (playerTurn % 2 === 0){
@@ -514,6 +521,7 @@ function clickBox7(){
     b7.removeEventListener("click", clickBox7);
 
     lastCheck();
+    playerMessage();
 }
 function clickBox8(){
     if (playerTurn % 2 === 0){
@@ -528,6 +536,7 @@ function clickBox8(){
     b8.removeEventListener("click", clickBox8);
 
     lastCheck();
+    playerMessage();
 }
 function clickBox9(){
     if (playerTurn % 2 === 0){
@@ -543,7 +552,18 @@ function clickBox9(){
     b9.removeEventListener("click", clickBox9);
 
     lastCheck();
+    playerMessage();
     
+}
+
+var turnUpdate = document.getElementById("turnUpdate");
+
+function playerMessage(){
+    if (playerTurn % 2 === 0){
+        turnUpdate.textContent = "X Players Turn";
+    } else {
+        turnUpdate.textContent = "O Players Turn";
+    }
 }
 
 function lastCheck() {
@@ -557,6 +577,7 @@ function lastCheck() {
     var B8 = document.getElementById("td-eight").textContent;
     var B9 = document.getElementById("td-nine").textContent;
 
+    
 
     if (((B1=="X") || (B1=="O")) && ((B1 == B2) && (B2 == B3))) {
         showEndField(B1);
@@ -597,6 +618,7 @@ function showEndField(winner){
     b7.removeEventListener("click", clickBox7);
     b8.removeEventListener("click", clickBox8);
     b9.removeEventListener("click", clickBox9);
+    
 }
 
 function tieMessage(){
@@ -606,41 +628,54 @@ function tieMessage(){
 
 
 /////////////////////////////////////////////////////////
-var endWindowButton = document.getElementById("endFieldButton");
-var resetGameButton = document.getElementById("restartButton");
+// var endWindowButton = document.getElementById("endFieldButton");
+// var resetGameButton = document.getElementById("restartButton");
 
-endWindowButton.addEventListener("click", resetGame);
-resetGameButton.addEventListener("click", resetGame);
+
 
 // function gameResetButton(){
 
 //     endWindowButton.addEventListener("click", resetGame);
 //     resetGameButton.addEventListener("click", resetGame);
+
 // }
 
 
 function resetGame(){
 
-    var B1 = document.getElementById("td-one").textContent;
-    var B2 = document.getElementById("td-two").textContent;
-    var B3 = document.getElementById("td-three").textContent;
-    var B4 = document.getElementById("td-four").textContent;
-    var B5 = document.getElementById("td-five").textContent;
-    var B6 = document.getElementById("td-six").textContent;
-    var B7 = document.getElementById("td-seven").textContent;
-    var B8 = document.getElementById("td-eight").textContent;
-    var B9 = document.getElementById("td-nine").textContent;
+    var b1 = document.getElementById("td-one");
+    var b2 = document.getElementById("td-two");
+    var b3 = document.getElementById("td-three");
+    var b4 = document.getElementById("td-four");
+    var b5 = document.getElementById("td-five");
+    var b6 = document.getElementById("td-six");
+    var b7 = document.getElementById("td-seven");
+    var b8 = document.getElementById("td-eight");
+    var b9 = document.getElementById("td-nine");
 
-    B1.innerText = "";
-    B2.innerText = "";
-    B3.innerText = "";
-    B4.innerText = "";
-    B5.innerText = "";
-    B6.innerText = "";
-    B7.innerText = "";
-    B8.innerText = "";
-    B9.innerText = "";
+   
+
+    b1.textContent = "";
+    b2.textContent = "";
+    b3.textContent = "";
+    b4.textContent = "";
+    b5.textContent = "";
+    b6.textContent = "";
+    b7.textContent = "";
+    b8.textContent = "";
+    b9.textContent = "";
+    
+    // clearcontent(B1);
+
+    // function clearcontent(element) { 
+    //     document.getElementById(element).innerText = ""; 
+    // } 
 
     document.getElementById("endField").style.display = "none";
+    listener();
+    
 
 }
+// function clearcontent(element) { 
+//     document.getElementById(element).innerText = ""; 
+// } 

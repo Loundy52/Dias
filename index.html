@@ -10,6 +10,8 @@
 <body>
   <h1>Tic-Tac-Toe</h1>
 
+  <h3 id = "turnUpdate"></h3>
+
   <table class="gameBoard">
     <tr>
       <td class = "field" id="td-one"></td>
@@ -28,11 +30,11 @@
     </tr>
   </table>
 
-  <button id = "restartButton">RESET GAME</button>
+  <button id = "restartButton" onclick="resetGame()">RESET GAME</button>
   
   <div id="endField">
     <p id = "text"></p>>
-    <button id = "endFieldButton">Play Again</button>
+    <button id = "endFieldButton" onclick="resetGame()">Play Again</button>
   </div>
   <!-- <section id = "overlay"></section> -->
 
