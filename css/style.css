@@ -17,23 +17,28 @@ body {
   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr ;
   height: 450px;
   width: 450px;
+  font-size: 75px;
+  color: orange;
 }
 
 #cell0 {
   border-right: 6px solid orange;
   border-bottom: 3px solid orange;
   height: 150px;
+  text-align: center;
 }
 
 #cell1 {
   border-bottom: 3px solid orange;
   height: 150px;
+  text-align: center;
 }
 
 #cell2 {
   border-left: 6px solid orange;
   border-bottom: 3px solid orange;
   height: 150px;
+  text-align: center;
 }
 
 #cell3 {
@@ -41,12 +46,14 @@ body {
   border-bottom: 3px solid orange;
   border-right: 6px solid orange;
   height: 150px;
+  text-align: center;
 }
 
 #cell4 {
   border-top: 3px solid orange;
   border-bottom: 3px solid orange;
   height: 150px;
+  text-align: center;
 }
 
 #cell5 {
@@ -54,20 +61,24 @@ body {
   border-bottom: 3px solid orange;
   border-left: 6px solid orange;
   height: 150px;
+  text-align: center;
 }
 #cell6 {
   border-top: 3px solid orange;
   border-right: 6px solid orange;
   height: 150px;
+  text-align: center;
 }
 
 #cell7 {
   border-top: 3px solid orange;
   height: 150px;
+  text-align: center;
 }
 
 #cell8 {
   border-top: 3px solid orange;
   border-left: 6px solid orange;
   height: 150px;
+  text-align: center;
 }
