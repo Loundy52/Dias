@@ -26,7 +26,7 @@ h1 {
 }
 /* Main grid box used for Game. */
 .gameBoard {
-  background: lightblue;
+  background: blue;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -43,7 +43,7 @@ within <div class="container-One> </div> */
   align-items: center;
   font-size: 30px;
   cursor: pointer;
-  background: blue;
+  background:lightblue;
   height: 100px;
   width: 100px;
 
