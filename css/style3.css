@@ -16,6 +16,7 @@
 }
 
 .q {
+    /* sized precariously, will break if increased */
     width: 100px;
     height: 100px;
     float: left;
