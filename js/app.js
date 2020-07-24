@@ -45,46 +45,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let checkWinner = () => {
             for (let i = 0; i < arrayCells.length; i++) {
-                playerX = 0;
+                let playerX = [];
+                let playerO = [];
                 let arr2 = arrayCells[i];
-
+                console.log(arr2);
                 for (let j = 0; j < arr2.length; j++) {
-                    if (player1.includes(arr2[i][j])) {
-                        player1++;
-
-                    }
-
+                    if (player1.includes(arr2[j])) {
+                       playerX.push(arr2[j]);
+                   } 
+                    if  (player2.includes(arr2[j])) {
+                         playerO.push(arr2[j])
+                   }
                 }
 
-            } if (player1 === 3) {
-                alert("player 1 won");
-                return true;
-            }
-
-    //     } else if (let i = 0; i < arrayCells.length i++) {
-    //     playerO = 0;
-    //     let arr3 = arrayCells[i];
-
-    //     for (let j = 0; j < arr3.length; j++) {
-    //         if (player2.includes(arr3[i][j]) {
-    //             player2++;
-
-
-    //         }
-    //     }
-    // }
-    // if (player2 === 3) {
-    //     alert("Player 2 won!");
-    // }
-
+            } if (playerX.length === 3 || playerO.length === 3) {
+                
+                console.log('player ' + turn + ' wins')
+            } 
 }
-
-
         if (winner === false) {
 
     let cell = event.target;//which cell was clicked on...set an attribute  
     if (turn % 2 == 0) {
-        turn++;
+        
         cell.classList.add('player1')
         //look up attribute (TA mentioned to add this)
         //console.log(cell);
@@ -93,14 +76,10 @@ document.addEventListener('DOMContentLoaded', function () {
         cell.toggleAttribute('block');
         switchOver.textContent = "Player 2 go!"
 
-
-
         checkWinner();
         tie();
-
-    } else {
         turn++;
-
+    } else {
         cell.classList.add('player2'); //look up attribute (TA mentioned to add this)
         player2.push(cell.id);
         //console.log(player2);
@@ -110,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
         switchOver.textContent = "Player 1, we don't have all day!";
         checkWinner();
         tie();
-
+        turn++;
     }
 
 } else if (winner === true) {
