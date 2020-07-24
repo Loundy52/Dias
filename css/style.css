@@ -61,3 +61,15 @@ body {
 .red {
   background: red;
 }
+
+.player1{
+  background-image: url("https://clipart.info/images/ccovers/1559858478Alphabet-Paw-Patrol-Letter-X.png");
+  background-size: cover;
+  background-color: lightblue;
+}
+
+.player2{
+  background-image: url("https://ctl.s6img.com/society6/img/Db3sBDsz5w5v2_UN2TL2uAD2FLw/w_1500/prints/~artwork/s6-original-art-uploads/society6/uploads/misc/0b2be05f269640e6a0772e3b5e850f20/~~/letter-o-sign-on-placid-blue-background-prints.jpg");
+  background-size: cover;
+  background-color: lightblue;
+}
