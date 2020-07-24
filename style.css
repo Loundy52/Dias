@@ -1,0 +1,87 @@
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+  
+ /* font color and styling */
+ body {
+    color: whitesmoke;
+    display: flex;
+    font-family: sans-serif;
+    justify-content: center;
+ }
+
+ /* container color, rounded edges and shaping preferences */
+ .container {
+    background: navy;
+    margin: 50px;
+    padding: 50px;
+    border-radius: 25px;
+ }
+  
+/* center the title */
+ .title {
+    text-align: center;
+ }
+  
+/* proper spacing of the status text areas */
+ .status-action {
+    display: flex;
+    margin-top: 25px;
+    font-size: 25px;
+    justify-content: space-around;
+    height: 30px;
+ }
+  
+ /* cursor turns into a pointer when it hovers over 'reset' */
+ .reset {
+    cursor: pointer;
+ }
+/* color turns from white to green */
+ .reset:hover {
+    color: greenyellow;
+ }
+  
+ /* grid construction to include rows and colums equally divided by the space, grid spacing and margin */
+ .game-grid {
+    background: black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 15px;
+    margin-top: 50px;
+ }
+
+ /* background color, spacing and alignment on page */
+ .game-cell {
+    background:navy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+ }
+
+ /* cursor shape */
+ .x,
+ .o {
+     cursor: auto;
+ }
+
+ /* x and o markers in the game */
+ .x::after {
+     content: 'x';
+     font-size: 200px
+ }
+ .o::after {
+     content: '○';
+     color: greenyellow;
+     font-size: 250px;
+ }
+
+ /* effect on winner's markers */
+ .won::after {
+     color: violet;
+ }
