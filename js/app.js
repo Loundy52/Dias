@@ -26,23 +26,18 @@ function startTitle(create, time) {
 };
 
 startTitle(createIntro, 500);
-startTitle(createSecond, 900);
-startTitle(createThird, 1300);
-startTitle(createFourth, 1700);
+startTitle(createSecond, 1500);
+startTitle(createThird, 2500);
+startTitle(createFourth, 3000);
 
 //Actual Assignment
 //create game play 
 //set event listeners for each square
 //sets values for key concepts
-const winningCombos = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
+const winningCombos = [ //I like how brent recorded these notes
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], //horizontal
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], //vertical
+    [0, 4, 8], [2, 4, 6] //diagonals
 ];
 
 const ex = 'js/JonSnow.png';
@@ -51,7 +46,7 @@ let mark = 'js/JonSnow.png';
 let win;
 let gameboard;
 
-const grid = Array.from(document.querySelectorAll("img")); //creates an array from the img elements in the html
+const grid = Array.from(document.querySelectorAll("p")); //creates an array from the img elements in the html
 
 const messages = document.querySelector("h3"); //identifies where message will be made during game play
 document.getElementById('mainElement').addEventListener('click', handleTurn); //adds an event listener to the entire gameboard div
@@ -59,7 +54,9 @@ document.getElementById('mainElement').addEventListener('click', handleTurn); //
 //determine if a win happened
 
 function score(){
-    let player = null; //starts with an inner variable
+    let player = null; //starts with an inner variable: also I couldn't remember where I found the tutorial so I rewrote all my code so that I could source correctly
+
+
 
     winningCombos.forEach(function(combo, index){ //runs the set of win scores in winningcombos against the win scores in the gameboard. If three elements are equal, logs the player which makes these values equal.
     if (gameboard[combo[0]] && gameboard[combo[0]] === gameboard[combo[1]] && gameboard[combo[0]] === gameboard[combo[2]]) player = gameboard[combo[0]];
@@ -81,7 +78,7 @@ function handleTurn() { //sets three things for turn. adds the play, marks the s
     play(); //calls the play function!
 };
 
-function start() { //creates a gameboard that captures each play to run against the winning combos.
+function start() { //creates a new gameboard that captures each play to run against the winning combos.
     gameboard = [
     '', '', '',
     '', '', '',
@@ -97,7 +94,7 @@ function play() {
     grid[index].src = mark; //this is repetitive but I wanted to make sure it didn't mess up, it also logs mark as the src since mark is an image.
     });
     messages.textContent = win === 'T' ? `Stalemate, wait for next season` : win ? `${win} wins the game!` : `It's ${mark}'s turn!`;
-    //tertray statement for if value of T log stalemate, else win logs that element (whhich is logged as the functional player. etc.)
+    //tertray statement for if value of T log stalemate, else win logs that element (which is logged as the functional player. etc.)
 };
 
 start();
