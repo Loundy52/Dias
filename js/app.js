@@ -32,7 +32,7 @@ square1.addEventListener("click", function() {
         square1.classList.add("player1");
         checkTurn = 0;
         displayTurn.innerText = "Player2, you're up!"
-    }   
+    }   checkWin1();
 });
 
 square2.addEventListener("click", function () {
@@ -46,7 +46,7 @@ square2.addEventListener("click", function () {
         square2.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    }   checkWin1()
+    }   checkWin1();
     
 });
 
@@ -76,7 +76,7 @@ square4.addEventListener("click", function () {
         square3.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    }   checkWin1()
+    }   checkWin1();
     
 });
 
@@ -136,7 +136,7 @@ square8.addEventListener("click", function () {
         square8.classList.add("player1");
         checkTurn = 0;
         displayTurn.textContent = "Player2, you're up!";
-    } checkWin1()
+    } checkWin1();
    
 });
 
@@ -154,6 +154,7 @@ square9.addEventListener("click", function () {
     } checkWin1();
     
 });
+
 
 
 //checks for a winner??? 
@@ -224,35 +225,29 @@ function checkWin1() {
         announceWinner.innerText = "Player2 is the winner!";
     }
 
+    function alertWhenClickFilledBox() {
+        let square = document.querySelector(".square");
+        if (square.textContent === player1 || square.textContent === player2) {
+            alert("This square is already filled. please choose another one");
+        }
+    }
+    document.querySelector(".square").addEventListener("click", alertWhenClickFilledBox);
+
+
+    // setInterval(function() {
+    // if (announceWinner.innerText === "Player1 is the winner!" || announceWinner.innerText === "Player2 is the winner!"){
+    //     alert("THE GAME IS OVER!!"); 
+    //     displayTurn.textContent.remove();
+    //     }
+    // }, 1000);
+}
 
     setInterval(function() {
-    if (announceWinner.innerText === "Player1 is the winner!" || announceWinner.innerText === "Player2 is the winner!"){
-        alert("THE GAME IS OVER!!"); 
-        document.querySelector()}
-    }, 2000);
-
-
-    
-
-
-
-//         } else {
-//             announceWinner.innerText = "Player2 is the winner!";
-//         }
-//     } else if (four === player1 && five === player1 && four === player1) {
-//         if (checkTurn === 0) {
-//             announceWinner.innerText = "Player1 is the winner!";
-//         } else {
-//             announceWinner.innerText = "Player2 is the winner!";
-//         } 
-//     } else if (seven === eight && eight === nine && seven === nine) {
-//         if (checkTurn === 0) {
-//             announceWinner.innerText = "Player1 is the winner!";
-//         } else {
-//             announceWinner.innerText = "Player2 is the winner!";
-//         }
-        }
-// }
+        if (announceWinner.innerText === "Player1 is the winner!" || announceWinner.innerText === "Player2 is the winner!"){
+            alert("THE GAME IS OVER!!"); 
+            displayTurn.textContent.remove();
+            }
+    }, 1000);
 
 function clearAllSquares() {
     document.querySelector("#square1").textContent = " ";
