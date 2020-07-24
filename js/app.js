@@ -5,13 +5,12 @@ let lastClicked;
 let xMoves = [];// when someone click 012 on winning cobination 
 let oMoves = [];// make sure to clear board and empty the arrays when the game is won
 let gameEnd = false;
-
-
-
-//div board never going to change 
-// when using queryselector use . or #
+let gameBox = ''
+let boxes = []
 const gameBoard = document.querySelector('.gameBoard');
 const status = document.getElementById('status')
+//div board never going to change 
+// when using queryselector use . or #
 // console.log(gameBoard);
 //will add class to item
 // this is for a single class 
@@ -20,16 +19,18 @@ const status = document.getElementById('status')
 
 for(i = 0; i < 9; i++){
     //create element and a class and append 
-    const gameBox = document.createElement('div');
+    gameBox = document.createElement('div');
     gameBox.classList.add('gridCellItem');
     gameBox.id = i;
-    
     gameBox.addEventListener('click', clickGameBox);
-    // gameBox.removeEventListener('click', clickGameBox)
-    // chosonle.log(clickGameBox)
+        // gameBox.removeEventListener('click', clickGameBox)
+        // chosonle.log(clickGameBox)
     gameBoard.appendChild(gameBox);
+        
+  
     
-}
+    }
+
 
 
 // the item turn thats clicked is the target 
@@ -48,7 +49,7 @@ function clickGameBox(event){
     console.log(event.target.id)
     event.target.removeEventListener('click', clickGameBox)
     xMoves.push(Number(event.target.id))
-    status.textContent = 'O your up!'
+    status.textContent = 'O your up next!'
     checkWin(xMoves)
     console.log(xMoves)
 
@@ -61,7 +62,7 @@ function clickGameBox(event){
         console.log(lastClicked)
         event.target.removeEventListener('click', clickGameBox)
         oMoves.push(Number(event.target.id))
-        status.textContent = 'X your up!'
+        status.textContent = 'X your up first!'
         checkWin(oMoves)
         console.log(oMoves)
 
@@ -71,7 +72,7 @@ function clickGameBox(event){
         console.log(lastClicked)
         event.target.removeEventListener('click', clickGameBox)
         xMoves.push(Number(event.target.id))
-        status.textContent = 'O your up!'
+        status.textContent = 'O your up next!'
         checkWin(xMoves)
         console.log(xMoves)
 
@@ -88,12 +89,13 @@ turn += 1;
 //once someone has 3 clicks on board check win
 
 function checkWin(moves){
+    // console.log(turn)
     var player = '';
     if(turn % 2 === 0){
-        player = 'Player One'
+        player = 'X'
 
     } else{
-        player = 'Player Two'
+        player = 'O'
     }
     //first need x moves or o moves 
     // try switch statements later 
@@ -103,43 +105,48 @@ function checkWin(moves){
        status.textContent = player + ' win'
        gameEnd = true;
         console.log('Top horizontal win' + '🐯')
-        resetGameBoard()
+        resetTheBoard()
      } else if(moves.includes(3) && moves.includes(4) && moves.includes(5)){
         status.textContent = player + ' win'  
         gameEnd = true;
         console.log('Mid horizontal win' + '🐯 ')
-         resetGameBoard()
+         resetTheBoard()
      } else if(moves.includes(6) && moves.includes(7) && moves.includes(8)){
         status.textContent = player + ' win'  
         gameEnd = true;
         console.log('Bot horizontal win' + '🐯')
-         resetGameBoard()
+         resetTheBoard()
      } else if(moves.includes(0) && moves.includes(3) && moves.includes(6)){
         status.textContent = player + ' win'  
         gameEnd = true;
         console.log('Topleft vertical win' + '🐧')
-         resetGameBoard()
+         resetTheBoard()
      } else if(moves.includes(1) && moves.includes(4) && moves.includes(7)){
         status.textContent = player + ' win'  
         gameEnd = true;
         console.log('TopMid veritcal win' + '🐧')
-         resetGameBoard()
+         resetTheBoard()
      } else if(moves.includes(2) && moves.includes(5) && moves.includes(8)){
         status.textContent = player + ' win'  
         gameEnd = true;
         console.log('TopRight vertical win' + '🐧')
-         resetGameBoard()
+         resetTheBoard()
      } else if(moves.includes(0) && moves.includes(4) && moves.includes(8)){
         status.textContent = player + ' win'  
         gameEnd = true;
         console.log('Topleft diagonal win' + '🐣')
-         resetGameBoard()
+         resetTheBoard()
      } else if(moves.includes(2) && moves.includes(4) && moves.includes(6)){
         status.textContent = player + ' win'  
         gameEnd = true;
         console.log('TopRight diagonal win' + '🐣')
-         resetGameBoard()
-     }  
+         resetTheBoard()
+     } else if(turn === 8){
+         status.textContent = 'Cats Game Tie!'
+         gameEnd = true;
+         console.log('Tie Game' + ' 🐮')
+         resetTheBoard()
+     }
 
     // if it does then call reset game function 
     // continue if no one has won then cats game 
@@ -150,46 +157,27 @@ function checkWin(moves){
 //reset xMoves and oMoves
 //set turns back to 0 zero
 //set status.textContent back to x your up
-function resetGameBoard(){
-    playerOne = []
-    playerTwo = []
+function resetTheBoard(){
+
+        setTimeout(function(){
+            window.location.reload();
+
+        }, 3000)
+    
+}
+
+   
+
+   
     //celone.textContent = empty string ''
     //clear the game board
     //reset all arrays and counters the turn counter
     
-    console.log('You win')
-}
-
-//winning combinations 
-//horizontal
-//012 345 678
-
-//vertical 
-//036 147 258
-
-//diagonals 
-//048 246
+    
+   
 
 
 
-
-
-// fucntion afterClickGameBox () {
-
-// }
-// next step figure out way how can to check if someone three x or o's 
-//now gotta show whos turn is it. 
-//
-// function whosTurn(a,b){
-//     let turnOne = 'x';
-//     let turnTwo = 'o'
-//     if(turnOne === true){
-//         return 'x';
-//     } else{
-//     return 'x';
-//     }
-// }
-// whosTurn('x', 'o')
 
 //once it alteranted compare who wins with combos
 //winning combinations  cell0 ==
@@ -228,3 +216,23 @@ function resetGameBoard(){
 //  clicks reset the text content 
 //the content of the boxes 
 //and new game starts 
+
+//create element where to acess from dom
+
+// const resetGame = () =>{
+//  xMoves = []
+//  oMoves = []
+//  winner = false;
+//  document.getElementById('reset').textContent = ''
+//     boxes.map(reset => {
+//     console.log(reset)
+// let box = document.getElementById(reset)
+// box.textContent = ''
+//     })
+//  //reseting turns someone has won
+//  //and reset all the boxes board back to blank
+//  //and status result
+ 
+// }
+// //create call back that attatch to reset button
+// reset.addEventListener('click', resetGame)
