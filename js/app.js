@@ -174,16 +174,62 @@ function checkWin1() {
 
 
     if (one === player1 && two === player1 && three === player1) {
-        console.log("player 1 wins");
         announceWinner.innerText = "Player1 is the winner!";
+        //alert("Game is over!");
     } else if (four === player1 && five === player1 && six === player1){
-        console.log("player 1 win");
         announceWinner.innerText = "Player1 is the winner!";
+        //alert("Game is over!");
     } else if (seven === player1 && eight === player1 && nine === player1){
-        console.log("player 1 win");
-        announceWinner.innerText = "Player1 is the winner!"; }
+        announceWinner.innerText = "Player1 is the winner!"; 
+        //alert("Game is over!");
+    } else if (one === player1 && four === player1 & seven === player1){
+        announceWinner.innerText = "Player1 is the winner!"; 
+        //alert("Game is over!");
+    } else if (two === player1 && five === player1 & eight === player1){
+        announceWinner.innerText = "Player1 is the winner!"; 
+        //alert("Game is over!");
+    } else if (three === player1 && six === player1 & nine === player1){
+        announceWinner.innerText = "Player1 is the winner!"; 
+        //alert("Game is over!");
+    } else if (one === player1 && five === player1 & nine === player1){
+        announceWinner.innerText = "Player1 is the winner!"; 
+        //alert("Game is over!");
+    } else if(three === player1 && five === player1 & seven === player1){
+        announceWinner.innerText = "Player1 is the winner!"; 
+        //alert("Game is over!");
+    }
+
+    if (one === player2 && two === player2 && three === player2) {
+        announceWinner.innerText = "Player2 is the winner!";
+    } else if (four === player2 && five === player2 && six === player2){
+        console.log("Player2 is the winner!");
+        announceWinner.innerText = "Player2 is the winner!";
+    } else if (seven === player2 && eight === player2 && nine === player2){
+        console.log("Player2 is the winner!");
+        announceWinner.innerText = "Player2 is the winner!"; 
+    } else if (one === player2 && four === player2 & seven === player2){
+        console.log("Player2 is the winner!");
+        announceWinner.innerText = "Player2 is the winner!";
+    } else if (two === player2 && five === player2 & eight === player2){
+        console.log("Player2 is the winner!");
+        announceWinner.innerText = "Player2 is the winner!";
+    } else if (three === player2 && six === player2 & nine === player2){
+        console.log("Player2 is the winner!");
+        announceWinner.innerText = "Player2 is the winner!";
+    } else if (one === player2 && five === player2 & nine === player2){
+        console.log("Player2 is the winner!");
+        announceWinner.innerText = "Player2 is the winner!";
+    } else if (three === player2 && five === player2 & seven === player2){
+        console.log("Player2 is the winner!"); 
+        announceWinner.innerText = "Player2 is the winner!";
+    }
 
 
+    setInterval(function() {
+    if (announceWinner.innerText === "Player1 is the winner!" || announceWinner.innerText === "Player2 is the winner!"){
+        alert("THE GAME IS OVER!!"); 
+        document.querySelector()}
+    }, 2000);
 
 
     
