@@ -22,7 +22,7 @@ body {
 }
 
 #cell0 {
-  border-right: 6px solid orange;
+  border-right: 3px solid orange;
   border-bottom: 3px solid orange;
   height: 150px;
   text-align: center;
@@ -30,12 +30,14 @@ body {
 
 #cell1 {
   border-bottom: 3px solid orange;
+  border-right: 3px solid orange;
+  border-left: 3px solid orange;
   height: 150px;
   text-align: center;
 }
 
 #cell2 {
-  border-left: 6px solid orange;
+  border-left: 3px solid orange;
   border-bottom: 3px solid orange;
   height: 150px;
   text-align: center;
@@ -44,7 +46,7 @@ body {
 #cell3 {
   border-top: 3px solid orange;
   border-bottom: 3px solid orange;
-  border-right: 6px solid orange;
+  border-right: 3px solid orange;
   height: 150px;
   text-align: center;
 }
@@ -52,6 +54,8 @@ body {
 #cell4 {
   border-top: 3px solid orange;
   border-bottom: 3px solid orange;
+  border-right: 3px solid orange;
+  border-left: 3px solid orange;
   height: 150px;
   text-align: center;
 }
@@ -59,26 +63,28 @@ body {
 #cell5 {
   border-top: 3px solid orange;
   border-bottom: 3px solid orange;
-  border-left: 6px solid orange;
+  border-left: 3px solid orange;
   height: 150px;
   text-align: center;
 }
 #cell6 {
   border-top: 3px solid orange;
-  border-right: 6px solid orange;
+  border-right: 3px solid orange;
   height: 150px;
   text-align: center;
 }
 
 #cell7 {
   border-top: 3px solid orange;
+  border-right: 3px solid orange;
+  border-left: 3px solid orange;
   height: 150px;
   text-align: center;
 }
 
 #cell8 {
   border-top: 3px solid orange;
-  border-left: 6px solid orange;
+  border-left: 3px solid orange;
   height: 150px;
   text-align: center;
 }

@@ -3,12 +3,29 @@
 // let oTurn= document.querySelector("#whoseTurn").createElement("h5");
 //     oTurn.textContent= "O Turn";
 
+let jsBoxes = [];
+const markXs = (event) => {
+    Xs.push(event.target);
+    jsBoxes.includes("X");
+    console.log(jsBoxes);
+};
+
+const markOs = (event) => {
+    Os.push(event.target);
+    
+}
+
+let Xs = [];
+let Os = [];
+
 const whoseTurn = document.querySelector("#whoseTurn");
+
+let clicks = 0;
 
 const wins = [
     ["cell0", "cell3", "cell6"],
     ["cell1", "cell4", "cell7"],
-    ["cell3", "cell5", "cell8"],
+    ["cell2", "cell5", "cell8"],
     ["cell0", "cell1", "cell2"],
     ["cell3", "cell4", "cell5"],
     ["cell6", "cell7", "cell8"],
@@ -18,11 +35,12 @@ const wins = [
 
 
 
-const checkForWin = () => {
+// let Xs = jsBoxes.includes(".playerX");
 
-}
+// const checkForWin = () => {
 
-let clicks = 0;
+// }
+
 whoseTurn.textContent = "X Turn";
 
 const turns = (event) => {
@@ -30,10 +48,14 @@ const turns = (event) => {
     if (clicks % 2 !== 0) { 
         whoseTurn.textContent = "X Turn";
         event.target.textContent = "X";
+        event.target.classList = "playerX";
+        event.target.addEventListener("click", markXs);
         event.target.removeEventListener("click", turns);
     } else {
         whoseTurn.textContent = "O Turn";
         event.target.textContent = "O";
+        event.target.classList = "playerO";
+        event.target.addEventListener("click", markOs);
         event.target.removeEventListener("click", turns);
     }
 }
@@ -45,16 +67,13 @@ const turns = (event) => {
 // }
 
 const gameBoard = document.querySelector(".gameBoard");
-const jsBoxes = [];
 
 
 // for loop iterates 9 times
 for (let i = 0; i < 9; i++) {
     // create js divs
     let box = document.createElement("div");
-    // assign each one a class of squares
-    box.classList.add("squares");
-    // and add an id of the index
+    // add an id of the index
     box.id = "cell" + i;
     // listen for the click and link it to turn count
     box.addEventListener("click", turns)
@@ -63,8 +82,16 @@ for (let i = 0; i < 9; i++) {
     jsBoxes.push(box);
 }
 
+// const resetButt = document.querySelector("#reset");
+// const clear = () => {
+//     jsBoxes.children.textContent = " ";
+//     let count = 0;
+// };
+// const resetGame = () => {
+//     resetButt.addEventListener("click", clear)
+// };
 
-
+    
 
 // const getXs= document.querySelector(".topRow");
 //     for (let i = 0; i < getXs.children.length; i++) {
