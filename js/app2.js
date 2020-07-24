@@ -1,3 +1,11 @@
+//check for win
+//log click value in gameboard and change textcontent of square
+//
+
+
+
+
+
 function createGameboard() { //creates an array of all squares' logic
     var squares = document.querySelectorAll('p'),
         result = [];
@@ -6,8 +14,29 @@ function createGameboard() { //creates an array of all squares' logic
     }
     return result;
 };
-
-
+//add event listener function to gameboard logging turn into textcontent.
+//if text content is equal to x or o, 
+turn = 0
+const ex = "x"; //starting value of x
+const oh = 'o'; //starting value of o
+mark = ex;
+document.getElementById('mainElement').addEventListener('click',
+    function takeTurn (){
+        let square = squares.findIndex(function(square) {
+            return square === event.target;
+        });
+    
+    });
+document.getElementById('mainElement').addEventListener('click',
+    function addTurn(){
+        turn ++;
+        if (turn%2 == 0){
+            return oh;
+        } else {
+            return ex;
+        }
+    });
+//toggleTurn();
 // let squareContent = document.querySelectorAll("p").textContent;
 // console.log(squareContent);
 // const grid = Array.from(squareContent); //creates an array from the img elements in the html
@@ -15,9 +44,6 @@ function createGameboard() { //creates an array of all squares' logic
 const messages = document.querySelector("h3"); //identifies where message will be made during game play
 //document.getElementById('mainElement').addEventListener('click', handleTurn); //adds an event listener to the entire gameboard div
 
-const ex = "x"; //starting value of x
-const oh = 'o'; //starting value of o
-let turn = 'x'; //switches between the players, but starts with X
 let win;
 let gameboard;
 let winningValues = [
@@ -27,5 +53,5 @@ let winningValues = [
 ];
 
 function checkScore(){
-    
+
 }
