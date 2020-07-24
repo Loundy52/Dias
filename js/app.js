@@ -7,6 +7,21 @@ let oMoves = [];// make sure to clear board and empty the arrays when the game i
 let gameEnd = false;
 let gameBox = ''
 let boxes = []
+// const resetGame = document.getElementById('reset')
+// console.log('you are pressing ' + resetGame)
+// resetGame.addEventListener('click', handleReset)
+//     const handleReset = ()=> {
+//         gameEnd = false
+//         for(cellDiv of gameBox.id) {
+//             cellDiv.classList.remove('x')
+//             cellDiv.classList.remove('o')
+//             cellDiv.classList.remove('win')
+//         }
+//         turn = true
+//     }
+
+
+
 const gameBoard = document.querySelector('.gameBoard');
 const status = document.getElementById('status')
 //div board never going to change 
@@ -49,7 +64,7 @@ function clickGameBox(event){
     console.log(event.target.id)
     event.target.removeEventListener('click', clickGameBox)
     xMoves.push(Number(event.target.id))
-    status.textContent = 'O your up next!'
+    status.textContent = 'O your up!'
     checkWin(xMoves)
     console.log(xMoves)
 
@@ -62,7 +77,7 @@ function clickGameBox(event){
         console.log(lastClicked)
         event.target.removeEventListener('click', clickGameBox)
         oMoves.push(Number(event.target.id))
-        status.textContent = 'X your up first!'
+        status.textContent = 'X your up!'
         checkWin(oMoves)
         console.log(oMoves)
 
@@ -72,7 +87,7 @@ function clickGameBox(event){
         console.log(lastClicked)
         event.target.removeEventListener('click', clickGameBox)
         xMoves.push(Number(event.target.id))
-        status.textContent = 'O your up next!'
+        status.textContent = 'O your up!'
         checkWin(xMoves)
         console.log(xMoves)
 
@@ -161,7 +176,7 @@ function resetTheBoard(){
 
         setTimeout(function(){
             window.location.reload();
-
+            resetTheBoard.innerText =('3,2,1')
         }, 3000)
     
 }
@@ -222,13 +237,13 @@ function resetTheBoard(){
 // const resetGame = () =>{
 //  xMoves = []
 //  oMoves = []
-//  winner = false;
-//  document.getElementById('reset').textContent = ''
-//     boxes.map(reset => {
+//  gameEnd = false;
+ 
+//  boxes.map(reset => {
+//     let box = document.getElementById('reset')
 //     console.log(reset)
-// let box = document.getElementById(reset)
-// box.textContent = ''
-//     })
+//     box.textContent = ''
+// })
 //  //reseting turns someone has won
 //  //and reset all the boxes board back to blank
 //  //and status result
