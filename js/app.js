@@ -1,11 +1,11 @@
 const statusDisplay = document.getElementsByClassName('.gameStatus');
 console.log(statusDisplay);
 
-
+const resetButton = document.getElementById('clear');
 
 var switchPlayer = 1;
 
-
+let boxes = []
 
 
 const container = document.querySelector('.container');
@@ -15,6 +15,7 @@ console.log(container)
 for (i = 1; i <= 9; i++){
     const box = document.createElement('div')
     box.id = 'box' + i
+    boxes.push(box.id)
     box.addEventListener('click',() =>{
         
         console.log('div clicked')
@@ -183,3 +184,18 @@ console.log(container)
         }
         }    
     }
+
+    const resetGame = () => {
+        player_x = []
+        player_o = []
+        winner = false;
+        document.getElementById('result').textContent= ''
+        boxes.map(boxId =>{
+          let box =  document.getElementById(boxId);
+          box.textContent = '' 
+
+        })
+        
+
+    }
+    resetButton.addEventListener('click', resetGame)
