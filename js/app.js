@@ -46,7 +46,7 @@ let mark = 'js/JonSnow.png';
 let win;
 let gameboard;
 
-const grid = Array.from(document.querySelectorAll("p")); //creates an array from the img elements in the html
+const grid = Array.from(document.querySelectorAll("img")); //creates an array from the img elements in the html
 
 const messages = document.querySelector("h3"); //identifies where message will be made during game play
 document.getElementById('mainElement').addEventListener('click', handleTurn); //adds an event listener to the entire gameboard div
@@ -70,7 +70,7 @@ function score(){
 
 function handleTurn() { //sets three things for turn. adds the play, marks the score board, and changes the mark to the next player
     let idx = grid.findIndex(function(square) {
-        return square === event.target;
+        return square === event.target; //return the event target element. as the 
     });
     gameboard[idx] = mark; //here I'm setting "mark" to be the value that indicates which player's turn it is. so that the gameboard index will have logged the img src identified.
     mark = mark === ex ? oh : ex; //logs as mark the source images above whenever called, but the tertary statement changes ex to oh or to ex. So we're just cycling through if X then make O if O then X.
