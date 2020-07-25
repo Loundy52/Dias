@@ -6,6 +6,9 @@
 let jsBoxes = [];
 let Xs = [];
 let Os = [];
+let winner = document.getElementById("winner");
+let winnerElement = document.createElement("p");
+
 const markXs = (event) => {
     Xs.push(event);
     console.log(Xs);
@@ -16,31 +19,41 @@ const markOs = (event) => {
     console.log(Os);
 }
 
+const markWinner = () => {
+    if (clicks % 2 !== 0) {
+        winnerElement.innerText = "X Wins!!!";
+        winner.appendChild(winnerElement);
+        gameBoard.removeEventListener('click', turns);
+    } else if (clicks % 2 === 0) {
+        winnerElement.innerText = "O Wins!!!";
+        winner.appendChild(winnerElement);
+        gameBoard.removeEventListener('click', turns);
+    }
+};
+
 const checkForWin = (arr) => {
-    if (arr.includes("cell0") && arr.includes("cell3") && arr.includes("cell")) {
-        return true;
+    if (arr.includes("cell0") && arr.includes("cell3") && arr.includes("cell6")) {
+        markWinner();
     } else if (arr.includes("cell1") && arr.includes("cell4") && arr.includes("cell7")) {
-        return true;
+        markWinner();
     } else if (arr.includes("cell2") && arr.includes("cell5") && arr.includes("cell8")) {
-        return true;
+        markWinner();
     } else if (arr.includes("cell0") && arr.includes("cell1") && arr.includes("cell2")) {
-        return true;
+        markWinner();
     } else if (arr.includes("cell3") && arr.includes("cell4") && arr.includes("cell5")) {
-        return true;
+        markWinner();
     } else if (arr.includes("cell6") && arr.includes("cell7") && arr.includes("cell8")) {
-        return true;
+        markWinner();
     } else if (arr.includes("cell0") && arr.includes("cell4") && arr.includes("cell8")) {
-        return true;
+        markWinner();
     } else if (arr.includes("cell2") && arr.includes("cell4") && arr.includes("cell6")) {
-        return true;
+        markWinner();
     } else {
         return false;
     };
 }
 
-const markWinner = () =>{
-    
-}
+
 
 const whoseTurn = document.querySelector("#whoseTurn");
 
@@ -88,6 +101,8 @@ const turns = (event) => {
         event.target.removeEventListener("click", turns);
         checkForWin(Xs);
         checkForWin(Os);
+    } else if (clicks === 9 && checkForWin(Xs) === false && checkForWin(Os) === false) {
+        
     }
 }
 
