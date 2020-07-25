@@ -1,14 +1,21 @@
+// global variables
+var turnCount = 1;
+var boxArray = [];
+let mainContainer;
+let winner;
+let reset;
+var winnerIs = '' ;
+let winCountX = 0;
+let winCountY = 0;
+let winCountTie = 0;
+
+
 // run this function after document loaded
 document.addEventListener('DOMContentLoaded', function() {
     //grabbing the elements from html
-    var mainContainer = document.querySelector('.container');
-    var winner = document.querySelector('h2');
-    var reset = document.querySelector('.button');
-    // global variables
-    var turnCount = 1;
-    var boxArray = [];
-    var boxContainerDiv ;
-    var winnerIs = '' ;
+    mainContainer = document.querySelector('.container');
+    winner = document.querySelector('h2');
+    reset = document.querySelector('.button');
     
     for (let i=0; i<9 ; i++) {
         // gameStop();
@@ -59,52 +66,87 @@ document.addEventListener('DOMContentLoaded', function() {
             winner.innerHTML = 'Let\'s Play The Game! </br> X is First';
             winner.style.color = 'black';
         }
+        boxArray = [];
         winnerIs = '';
         boxes.textContent = '';
     });
 
     } // End of for Loop
 
+}); // DOM Content Loaded End
+
     function gameStop() {
         if(winnerIs === 'X'){
             winner.style.color = 'black';
+            winCountX++;
             return; 
         } else if(winnerIs === 'O'){
             winner.style.color = 'white';
+            winCountY++;
             return;
         }
     }
+
+    function printWinCount() {
+        var xCount = document.getElementById('x');
+        var yCount = document.getElementById('o');
+        var tieCount = document.getElementById('tie');
+
+        xCount.textContent = winCountX;
+        yCount.textContent = winCountY
+        tieCount.textContent = winCountTie;
+    }
+
     // function to stop the event when there is a winner
     function winnerCheck() {
         if (boxArray[0] && boxArray[0] === boxArray[1] && boxArray[1] === boxArray[2]) {
             winner.textContent = 'Winner is ' +boxArray[0];
             winnerIs = boxArray[0];
+            gameStop();
+            printWinCount();
         } else if(boxArray[0] && boxArray[0] === boxArray[4] && boxArray[4] === boxArray[8]) {
             winner.textContent = 'Winner is ' +boxArray[0];
             winnerIs = boxArray[0];
+            gameStop();
+            printWinCount();
         } else if(boxArray[0] && boxArray[0] === boxArray[3] && boxArray[3] === boxArray[6]) {
             winner.textContent = 'Winner is ' +boxArray[0];
             winnerIs = boxArray[0];
+            gameStop();
+            printWinCount();
         } else if(boxArray[1] && boxArray[1] === boxArray[4] && boxArray[4] === boxArray[7]) {
             winner.textContent = 'Winner is ' +boxArray[1];
             winnerIs = boxArray[1];
+            gameStop();
+            printWinCount();
         } else if(boxArray[2] && boxArray[2] === boxArray[5] && boxArray[5] === boxArray[8]) {
             winner.textContent = 'Winner is ' +boxArray[2];
             winnerIs = boxArray[2];
+            gameStop();
+            printWinCount();
         } else if(boxArray[2] && boxArray[2] === boxArray[4] && boxArray[4] === boxArray[6]) {
             winner.textContent = 'Winner is ' +boxArray[2];
             winnerIs = boxArray[2];
+            gameStop();
+            printWinCount();
         }else if(boxArray[3] && boxArray[3] == boxArray[4] && boxArray[4] === boxArray[5]) {
             winner.textContent = 'Winner is ' +boxArray[3];
             winnerIs = boxArray[3];
+            gameStop();
+            printWinCount();
         } else if(boxArray[6] && boxArray[6] === boxArray[7] && boxArray[7] === boxArray[8]) {
             winner.textContent = 'Winner is ' +boxArray[6];
             winnerIs = boxArray[6];
+            gameStop();
+            printWinCount();
         } else if(boxArray[0] && boxArray[1] && boxArray[2] && boxArray[3] && boxArray[4] && boxArray[5] && boxArray[6] && boxArray[7] && boxArray[8]){
-            winner.textContent = 'Game has Tied!';
+            winner.innerHTML = 'Game has Tied! </br> Let\'s Play The Game Again!';
+            winner.style.color = 'red';
+            winCountTie++;
+            printWinCount();
         }
     }
     
    
 
-}); // DOM Content Loaded End
+

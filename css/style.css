@@ -12,6 +12,15 @@ body{
   
 }
 
+.tie {
+  color: red
+}
+
+.points {
+  
+  text-align: center;
+}
+
 
 h1 {
   color: purple;
@@ -19,11 +28,16 @@ h1 {
   font-size: 50px;
 }
 
-h2 {
+.turn {
   height: 80px;
 }
 
-span {
+.o {
+  color: white;
+}
+
+
+.tie {
   color: Red;
 }
 
