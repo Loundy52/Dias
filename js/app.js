@@ -54,11 +54,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 //call reset function
             } else if (arr.includes("block7") && arr.includes("block8") && arr.includes("block9")) {
                 console.log('you win!')
-            } 
-            
-            // ...
+            } else if (arr.includes("block7") && arr.includes("block8") && arr.includes("block9")) {
+                console.log('you win!')
+            } else if (arr.includes("block1") && arr.include("block4") && arr.includes("block7")) {
+                console.log('you win!')
+            } else if (arr.inludes("block2") && arr.includes("block5") && arr.includes("block8")) {
+                console.log('you win!')
+            } else if (arr.includes("block3") && arr.includes("block6") && arr.includes("block9")) {
+                console.log("you win!")
+            } else if (arr.includes("block1") && arr.includes("block5") && arr.includes("block9")) {
+                console.log("you win!")
+            } else (arr.includes("block3") && arr.includes("block5") && arr.includes("block7"))
 
-            //if turns === 8 then its a tie!
 
 }
         if (winner === false) {
@@ -98,11 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 }
-
-
-
-
-
 
 function tie() {
     if (turn > 9) {
