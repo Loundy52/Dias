@@ -26,12 +26,12 @@ square1.addEventListener("click", function() {
         square1.textContent = player1; //inputs square 1 with o
         square1.classList.add("player2"); // adding a class to display the seperate players
         checkTurn = 1; //declares this is the first turm
-        displayTurn.textContent = "Player1, it's your turn!";
+        displayTurn.textContent = "Player2, it's your turn!";
     } else if (checkTurn == 1) { 
         square1.textContent = player2;
         square1.classList.add("player1");
         checkTurn = 0;
-        displayTurn.innerText = "Player2, you're up!"
+        displayTurn.innerText = "Player1, you're up!"
     }   checkWin1();
 });
 
@@ -40,12 +40,12 @@ square2.addEventListener("click", function () {
         square2.textContent = player1;
         square2.classList.add("player2");
         checkTurn = 1;
-        displayTurn.textContent = "Player1, it's your turn!";
+        displayTurn.textContent = "Player2, it's your turn!";
     } else if (checkTurn == 1){
         square2.textContent = player2;
         square2.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, you're up!";
+        displayTurn.textContent = "Player1, you're up!";
     }   checkWin1();
     
 });
@@ -55,12 +55,12 @@ square3.addEventListener("click", function () {
         square3.textContent = player1;
         square3.classList.add("player2");
         checkTurn = 1;
-        displayTurn.textContent = "Player1, it's your turn!";
+        displayTurn.textContent = "Player2, it's your turn!";
     } else if (checkTurn == 1){
         square3.textContent = player2;
         square3.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, you're up!";
+        displayTurn.textContent = "Player1, you're up!";
     } checkWin1();
    
 });
@@ -70,12 +70,12 @@ square4.addEventListener("click", function () {
         square4.textContent = player1;
         square4.classList.add("player2");
         checkTurn = 1;
-        displayTurn.textContent = "Player1, it's your turn!";
+        displayTurn.textContent = "Player2, it's your turn!";
     } else if (checkTurn == 1){
         square3.textContent = player2;
         square3.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, you're up!";
+        displayTurn.textContent = "Player1, you're up!";
     }   checkWin1();
     
 });
@@ -85,12 +85,12 @@ square5.addEventListener("click", function () {
         square5.textContent = player1;
         square5.classList.add("player2");
         checkTurn = 1;
-        displayTurn.textContent = "Player1, it's your turn!";
+        displayTurn.textContent = "Player2, it's your turn!";
     } else if (checkTurn == 1){
         square5.textContent = player2;
         square5.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, you're up!";
+        displayTurn.textContent = "Player1, you're up!";
     } checkWin1();
     
 });
@@ -100,12 +100,12 @@ square6.addEventListener("click", function () {
         square6.textContent = player1;
         square6.classList.add("player2");
         checkTurn = 1;
-        displayTurn.textContent = "Player1, it's your turn!";
+        displayTurn.textContent = "Player2, it's your turn!";
     } else if (checkTurn == 1){
         square6.textContent = player2;
         square6.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, you're up!";
+        displayTurn.textContent = "Player1, you're up!";
     } checkWin1();
    
 });
@@ -115,12 +115,12 @@ square7.addEventListener("click", function () {
         square7.textContent = player1;
         square7.classList.add("player2");
         checkTurn = 1;
-        displayTurn.textContent = "Player1, it's your turn!";
+        displayTurn.textContent = "Player2, it's your turn!";
     } else if (checkTurn == 1){
         square7.textContent = player2;
         square7.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, you're up!";
+        displayTurn.textContent = "Player1, you're up!";
     } checkWin1();
     
 });
@@ -130,12 +130,12 @@ square8.addEventListener("click", function () {
         square8.textContent = player1;
         square8.classList.add("player2");
         checkTurn = 1;
-        displayTurn.textContent = "Player1, it's your turn!";
+        displayTurn.textContent = "Player2, it's your turn!";
     } else if (checkTurn == 1){
         square8.textContent = player2;
         square8.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, you're up!";
+        displayTurn.textContent = "Player1, you're up!";
     } checkWin1();
    
 });
@@ -145,17 +145,15 @@ square9.addEventListener("click", function () {
         square9.textContent = player1;
         square9.classList.add("player2");
         checkTurn = 1;
-        displayTurn.textContent = "Player1, it's your turn!";
+        displayTurn.textContent = "Player2, it's your turn!";
     } else if (checkTurn == 1){
         square9.textContent = player2;
         square9.classList.add("player1");
         checkTurn = 0;
-        displayTurn.textContent = "Player2, you're up!";
+        displayTurn.textContent = "Player1, you're up!";
     } checkWin1();
     
 });
-
-
 
 //checks for a winner??? 
 let announceWinner = document.querySelector(".announceWinner");
@@ -225,6 +223,7 @@ function checkWin1() {
         announceWinner.innerText = "Player2 is the winner!";
     }
 
+
     function alertWhenClickFilledBox() {
         let square = document.querySelector(".square");
         if (square.textContent === player1 || square.textContent === player2) {
@@ -232,20 +231,12 @@ function checkWin1() {
         }
     }
     document.querySelector(".square").addEventListener("click", alertWhenClickFilledBox);
-
-
-    // setInterval(function() {
-    // if (announceWinner.innerText === "Player1 is the winner!" || announceWinner.innerText === "Player2 is the winner!"){
-    //     alert("THE GAME IS OVER!!"); 
-    //     displayTurn.textContent.remove();
-    //     }
-    // }, 1000);
 }
 
     setInterval(function() {
         if (announceWinner.innerText === "Player1 is the winner!" || announceWinner.innerText === "Player2 is the winner!"){
             alert("THE GAME IS OVER!!"); 
-            displayTurn.textContent.remove();
+            displayTurn.textContent= " ";
             }
     }, 1000);
 
